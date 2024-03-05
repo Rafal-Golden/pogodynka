@@ -9,7 +9,7 @@ import UIKit
 
 class AppCoordinator: Coordinator {
     
-    private var navigationController: UINavigationController
+    private(set) var navigationController: UINavigationController
     
     init(window: UIWindow) {
         self.navigationController = UINavigationController.init()
@@ -18,9 +18,9 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        let emptyVC = UIViewController()
-        emptyVC.view.backgroundColor = UIColor.red
-        navigationController.viewControllers = [emptyVC]
+        let coordinator = SearchCoordinator()
+        let searchVC = coordinator.build()
+        navigationController.viewControllers = [searchVC]
     }
     
     func navigate(_ destination: Destination) {

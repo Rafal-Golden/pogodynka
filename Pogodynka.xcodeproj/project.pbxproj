@@ -11,11 +11,16 @@
 		9975E1E92B9739FC00FED600 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E1E82B9739FC00FED600 /* SceneDelegate.swift */; };
 		9975E1F02B9739FF00FED600 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9975E1EF2B9739FF00FED600 /* Assets.xcassets */; };
 		9975E1F32B9739FF00FED600 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9975E1F12B9739FF00FED600 /* LaunchScreen.storyboard */; };
-		9975E1FE2B9739FF00FED600 /* PogodynkaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E1FD2B9739FF00FED600 /* PogodynkaTests.swift */; };
+		9975E1FE2B9739FF00FED600 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E1FD2B9739FF00FED600 /* AppCoordinatorTests.swift */; };
 		9975E2082B9739FF00FED600 /* PogodynkaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2072B9739FF00FED600 /* PogodynkaUITests.swift */; };
 		9975E20A2B9739FF00FED600 /* PogodynkaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2092B9739FF00FED600 /* PogodynkaUITestsLaunchTests.swift */; };
 		9975E2172B97406A00FED600 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2162B97406A00FED600 /* Coordinator.swift */; };
 		9975E21A2B97417A00FED600 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2192B97417A00FED600 /* AppCoordinator.swift */; };
+		9975E21F2B97714B00FED600 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E21E2B97714B00FED600 /* SearchCoordinator.swift */; };
+		9975E2212B9772C700FED600 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2202B9772C700FED600 /* SearchViewController.swift */; };
+		9975E2232B97732800FED600 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2222B97732800FED600 /* SearchViewModel.swift */; };
+		9975E2252B97C3AF00FED600 /* SearchViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2242B97C3AF00FED600 /* SearchViewModelTest.swift */; };
+		9975E2282B97C50C00FED600 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 9975E2272B97C50C00FED600 /* Nimble */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,12 +48,16 @@
 		9975E1F22B9739FF00FED600 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9975E1F42B9739FF00FED600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9975E1F92B9739FF00FED600 /* PogodynkaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PogodynkaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9975E1FD2B9739FF00FED600 /* PogodynkaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PogodynkaTests.swift; sourceTree = "<group>"; };
+		9975E1FD2B9739FF00FED600 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
 		9975E2032B9739FF00FED600 /* PogodynkaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PogodynkaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9975E2072B9739FF00FED600 /* PogodynkaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PogodynkaUITests.swift; sourceTree = "<group>"; };
 		9975E2092B9739FF00FED600 /* PogodynkaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PogodynkaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9975E2162B97406A00FED600 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9975E2192B97417A00FED600 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		9975E21E2B97714B00FED600 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
+		9975E2202B9772C700FED600 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		9975E2222B97732800FED600 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		9975E2242B97C3AF00FED600 /* SearchViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewModelTest.swift; path = PogodynkaTests/SearchViewModelTest.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9975E2282B97C50C00FED600 /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +112,8 @@
 				9975E1E62B9739FB00FED600 /* AppDelegate.swift */,
 				9975E1E82B9739FC00FED600 /* SceneDelegate.swift */,
 				9975E2182B9740F600FED600 /* App */,
+				9975E21D2B97711200FED600 /* Model */,
+				9975E21C2B9770E500FED600 /* API */,
 				9975E1EF2B9739FF00FED600 /* Assets.xcassets */,
 				9975E1F12B9739FF00FED600 /* LaunchScreen.storyboard */,
 				9975E1F42B9739FF00FED600 /* Info.plist */,
@@ -112,7 +124,8 @@
 		9975E1FC2B9739FF00FED600 /* PogodynkaTests */ = {
 			isa = PBXGroup;
 			children = (
-				9975E1FD2B9739FF00FED600 /* PogodynkaTests.swift */,
+				9975E1FD2B9739FF00FED600 /* AppCoordinatorTests.swift */,
+				9975E2242B97C3AF00FED600 /* SearchViewModelTest.swift */,
 			);
 			path = PogodynkaTests;
 			sourceTree = "<group>";
@@ -131,8 +144,33 @@
 			children = (
 				9975E2162B97406A00FED600 /* Coordinator.swift */,
 				9975E2192B97417A00FED600 /* AppCoordinator.swift */,
+				9975E21B2B9770CF00FED600 /* Search */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		9975E21B2B9770CF00FED600 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				9975E21E2B97714B00FED600 /* SearchCoordinator.swift */,
+				9975E2222B97732800FED600 /* SearchViewModel.swift */,
+				9975E2202B9772C700FED600 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		9975E21C2B9770E500FED600 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		9975E21D2B97711200FED600 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +207,9 @@
 				9975E1FB2B9739FF00FED600 /* PBXTargetDependency */,
 			);
 			name = PogodynkaTests;
+			packageProductDependencies = (
+				9975E2272B97C50C00FED600 /* Nimble */,
+			);
 			productName = PogodynkaTests;
 			productReference = 9975E1F92B9739FF00FED600 /* PogodynkaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -223,6 +264,9 @@
 				Base,
 			);
 			mainGroup = 9975E1DA2B9739FB00FED600;
+			packageReferences = (
+				9975E2262B97C50C00FED600 /* XCRemoteSwiftPackageReference "Nimble" */,
+			);
 			productRefGroup = 9975E1E42B9739FB00FED600 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -265,7 +309,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9975E2212B9772C700FED600 /* SearchViewController.swift in Sources */,
+				9975E2232B97732800FED600 /* SearchViewModel.swift in Sources */,
 				9975E2172B97406A00FED600 /* Coordinator.swift in Sources */,
+				9975E21F2B97714B00FED600 /* SearchCoordinator.swift in Sources */,
 				9975E21A2B97417A00FED600 /* AppCoordinator.swift in Sources */,
 				9975E1E72B9739FB00FED600 /* AppDelegate.swift in Sources */,
 				9975E1E92B9739FC00FED600 /* SceneDelegate.swift in Sources */,
@@ -276,7 +323,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9975E1FE2B9739FF00FED600 /* PogodynkaTests.swift in Sources */,
+				9975E2252B97C3AF00FED600 /* SearchViewModelTest.swift in Sources */,
+				9975E1FE2B9739FF00FED600 /* AppCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,6 +655,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9975E2262B97C50C00FED600 /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9975E2272B97C50C00FED600 /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9975E2262B97C50C00FED600 /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9975E1DB2B9739FB00FED600 /* Project object */;
 }
