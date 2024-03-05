@@ -1,0 +1,17 @@
+//
+//  Coordinator.swift
+//  Pogodynka
+//
+//  Created by Rafal Korzynski on 05/03/2024.
+//
+
+import Foundation
+
+enum Destination {
+    case back
+}
+
+protocol Coordinator {
+    func start()
+    func navigate(_ destination: Destination)
+}

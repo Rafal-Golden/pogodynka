@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		9975E1E72B9739FB00FED600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E1E62B9739FB00FED600 /* AppDelegate.swift */; };
 		9975E1E92B9739FC00FED600 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E1E82B9739FC00FED600 /* SceneDelegate.swift */; };
-		9975E1EB2B9739FC00FED600 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E1EA2B9739FC00FED600 /* ViewController.swift */; };
-		9975E1EE2B9739FC00FED600 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9975E1EC2B9739FC00FED600 /* Main.storyboard */; };
 		9975E1F02B9739FF00FED600 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9975E1EF2B9739FF00FED600 /* Assets.xcassets */; };
 		9975E1F32B9739FF00FED600 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9975E1F12B9739FF00FED600 /* LaunchScreen.storyboard */; };
 		9975E1FE2B9739FF00FED600 /* PogodynkaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E1FD2B9739FF00FED600 /* PogodynkaTests.swift */; };
 		9975E2082B9739FF00FED600 /* PogodynkaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2072B9739FF00FED600 /* PogodynkaUITests.swift */; };
 		9975E20A2B9739FF00FED600 /* PogodynkaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2092B9739FF00FED600 /* PogodynkaUITestsLaunchTests.swift */; };
+		9975E2172B97406A00FED600 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2162B97406A00FED600 /* Coordinator.swift */; };
+		9975E21A2B97417A00FED600 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2192B97417A00FED600 /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,6 @@
 		9975E1E32B9739FB00FED600 /* Pogodynka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pogodynka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9975E1E62B9739FB00FED600 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9975E1E82B9739FC00FED600 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9975E1EA2B9739FC00FED600 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9975E1ED2B9739FC00FED600 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9975E1EF2B9739FF00FED600 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9975E1F22B9739FF00FED600 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9975E1F42B9739FF00FED600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +47,8 @@
 		9975E2032B9739FF00FED600 /* PogodynkaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PogodynkaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9975E2072B9739FF00FED600 /* PogodynkaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PogodynkaUITests.swift; sourceTree = "<group>"; };
 		9975E2092B9739FF00FED600 /* PogodynkaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PogodynkaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9975E2162B97406A00FED600 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		9975E2192B97417A00FED600 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +101,7 @@
 			children = (
 				9975E1E62B9739FB00FED600 /* AppDelegate.swift */,
 				9975E1E82B9739FC00FED600 /* SceneDelegate.swift */,
-				9975E1EA2B9739FC00FED600 /* ViewController.swift */,
-				9975E1EC2B9739FC00FED600 /* Main.storyboard */,
+				9975E2182B9740F600FED600 /* App */,
 				9975E1EF2B9739FF00FED600 /* Assets.xcassets */,
 				9975E1F12B9739FF00FED600 /* LaunchScreen.storyboard */,
 				9975E1F42B9739FF00FED600 /* Info.plist */,
@@ -125,6 +124,15 @@
 				9975E2092B9739FF00FED600 /* PogodynkaUITestsLaunchTests.swift */,
 			);
 			path = PogodynkaUITests;
+			sourceTree = "<group>";
+		};
+		9975E2182B9740F600FED600 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9975E2162B97406A00FED600 /* Coordinator.swift */,
+				9975E2192B97417A00FED600 /* AppCoordinator.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +241,6 @@
 			files = (
 				9975E1F32B9739FF00FED600 /* LaunchScreen.storyboard in Resources */,
 				9975E1F02B9739FF00FED600 /* Assets.xcassets in Resources */,
-				9975E1EE2B9739FC00FED600 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +265,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9975E1EB2B9739FC00FED600 /* ViewController.swift in Sources */,
+				9975E2172B97406A00FED600 /* Coordinator.swift in Sources */,
+				9975E21A2B97417A00FED600 /* AppCoordinator.swift in Sources */,
 				9975E1E72B9739FB00FED600 /* AppDelegate.swift in Sources */,
 				9975E1E92B9739FC00FED600 /* SceneDelegate.swift in Sources */,
 			);
@@ -297,14 +305,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9975E1EC2B9739FC00FED600 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9975E1ED2B9739FC00FED600 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9975E1F12B9739FF00FED600 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -447,9 +447,9 @@
 				INFOPLIST_FILE = Pogodynka/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -475,9 +475,9 @@
 				INFOPLIST_FILE = Pogodynka/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
