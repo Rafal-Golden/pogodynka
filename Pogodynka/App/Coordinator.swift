@@ -9,6 +9,7 @@ import Foundation
 
 enum Destination {
     case back
+    case weatherDetails(city: CityModel)
 }
 
 protocol Coordinator {

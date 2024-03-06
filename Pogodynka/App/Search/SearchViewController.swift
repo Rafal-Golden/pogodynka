@@ -6,21 +6,32 @@
 //
 
 import UIKit
+import Combine
 
 class SearchViewController: UIViewController {
 
     var model: SearchViewModel!
+    var goToWeatherDetails: ((CityModel) -> Void)?
     
-    private weak var searchBar: UISearchBar!
+    private var searchBar: UISearchBar!
+    private var tableView: UITableView!
+    private var loadingView: UIActivityIndicatorView!
+    
+    private var bucket = Set<AnyCancellable>()
+    private var searchTextPublisher = CurrentValueSubject<String, Never>("")
+    private var cities: [CityModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureUI()
+        updateUI()
     }
     
     private func configureUI() {
         configureSearchBar()
+        configureTableView()
+        configureLoadingView()
         
         view.backgroundColor = model.bgColor
         self.title = model.title
@@ -38,10 +49,32 @@ class SearchViewController: UIViewController {
         ]
         NSLayoutConstraint.activate(constraints)
         
-        searchBar.backgroundColor = .green
-        searchBar.showsSearchResultsButton = true
         searchBar.placeholder = model.title
         searchBar.delegate = self
+        self.searchBar = searchBar
+    }
+    
+    private func updateUI() {
+        model.$cities.sink { [weak self] newCities in
+            self?.update(cities: newCities)
+        }.store(in: &bucket)
+        
+        searchTextPublisher.debounce(for: .milliseconds(500), scheduler: RunLoop.main)
+            .removeDuplicates()
+            .sink { [weak self] updatedText in
+                self?.search(updatedText)
+        }.store(in: &bucket)
+    }
+    
+    private func search(_ typedText: String) {
+        self.loadingView.startAnimating()
+        self.model.searchCities(with: typedText)
+    }
+    
+    private func update(cities: [CityModel]) {
+        self.cities = cities
+        self.loadingView.stopAnimating()
+        self.tableView.reloadData()
     }
 }
 
@@ -52,6 +85,75 @@ extension SearchViewController: UISearchBarDelegate {
         
         let typedText = searchText.replacingCharacters(in: range, with: text)
         let range = typedText.range(of: model.matchRegExp, options: .regularExpression)
-        return (range != nil && range?.isEmpty == false)
+        
+        let shouldChangeText = (range != nil && range?.isEmpty == false)
+        if shouldChangeText {
+            searchTextPublisher.send(typedText)
+        }
+        return shouldChangeText
+    }
+}
+
+extension SearchViewController: UITableViewDataSource {
+    
+    func configureTableView() {
+        let tableView = UITableView(frame: .zero, style: .plain)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(tableView)
+                
+        let constraits = [
+            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 10),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            view.trailingAnchor.constraint(equalTo: tableView.trailingAnchor, constant: 10),
+            view.bottomAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 10),
+        ]
+        
+        NSLayoutConstraint.activate(constraits)
+        
+        self.tableView = tableView
+        tableView.register(CityCell.self, forCellReuseIdentifier: CityCell.id)
+        tableView.rowHeight = 40.0
+        tableView.estimatedRowHeight = 0.0
+        tableView.backgroundColor = .clear
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
+    func configureLoadingView() {
+        self.loadingView = UIActivityIndicatorView(style: .large)
+        loadingView.color = .black
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(loadingView)
+        
+        let constraints = [
+            loadingView.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
+            loadingView.centerYAnchor.constraint(equalTo: tableView.centerYAnchor),
+        ]
+        NSLayoutConstraint.activate(constraints)
+        
+        loadingView.hidesWhenStopped = true
+        loadingView.stopAnimating()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let id = CityCell.id
+        let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath) as! CityCell
+        let city = model.city(at: indexPath)
+        cell.configure(model: city)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cities.count
+    }
+}
+
+extension SearchViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let selectedCity = model.city(at: indexPath) {
+            goToWeatherDetails?(selectedCity)
+        }
     }
 }

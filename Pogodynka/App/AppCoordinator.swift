@@ -9,6 +9,8 @@ import UIKit
 
 class AppCoordinator: Coordinator {
     
+    var children: [Coordinator] = []
+    
     private(set) var navigationController: UINavigationController
     
     init(window: UIWindow) {
@@ -18,9 +20,9 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        let coordinator = SearchCoordinator()
-        let searchVC = coordinator.build()
-        navigationController.viewControllers = [searchVC]
+        let coordinator = SearchCoordinator(navigationController: navigationController)
+        coordinator.start()
+        children.append(coordinator)
     }
     
     func navigate(_ destination: Destination) {

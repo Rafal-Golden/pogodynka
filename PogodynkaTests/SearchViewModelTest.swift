@@ -12,15 +12,21 @@ import Nimble
 final class SearchViewModelTest: XCTestCase {
     
     var sut: SearchViewModel!
+    var serviceMock: WeatherServiceMock!
+    var repository: WeatherRepository!
 
     override func setUp() {
         super.setUp()
-        sut = SearchViewModel()
+        serviceMock = WeatherServiceMock()
+        repository = WeatherRepository(service: serviceMock)
+        sut = SearchViewModel(weatherRepository: repository)
     }
 
     override func tearDown() {
         super.tearDown()
         sut = nil
+        repository = nil
+        serviceMock = nil
     }
 
     func test_init_returnsEmptyCities() {

@@ -12,8 +12,6 @@
 		9975E1F02B9739FF00FED600 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9975E1EF2B9739FF00FED600 /* Assets.xcassets */; };
 		9975E1F32B9739FF00FED600 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9975E1F12B9739FF00FED600 /* LaunchScreen.storyboard */; };
 		9975E1FE2B9739FF00FED600 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E1FD2B9739FF00FED600 /* AppCoordinatorTests.swift */; };
-		9975E2082B9739FF00FED600 /* PogodynkaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2072B9739FF00FED600 /* PogodynkaUITests.swift */; };
-		9975E20A2B9739FF00FED600 /* PogodynkaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2092B9739FF00FED600 /* PogodynkaUITestsLaunchTests.swift */; };
 		9975E2172B97406A00FED600 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2162B97406A00FED600 /* Coordinator.swift */; };
 		9975E21A2B97417A00FED600 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2192B97417A00FED600 /* AppCoordinator.swift */; };
 		9975E21F2B97714B00FED600 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E21E2B97714B00FED600 /* SearchCoordinator.swift */; };
@@ -21,6 +19,17 @@
 		9975E2232B97732800FED600 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2222B97732800FED600 /* SearchViewModel.swift */; };
 		9975E2252B97C3AF00FED600 /* SearchViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2242B97C3AF00FED600 /* SearchViewModelTest.swift */; };
 		9975E2282B97C50C00FED600 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 9975E2272B97C50C00FED600 /* Nimble */; };
+		9975E22A2B98636500FED600 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2292B98636500FED600 /* WeatherService.swift */; };
+		9975E22C2B98648600FED600 /* LocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E22B2B98648600FED600 /* LocationInfo.swift */; };
+		9975E22E2B986A2600FED600 /* WeatherRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E22D2B986A2600FED600 /* WeatherRepositoryTests.swift */; };
+		9975E2302B986BF100FED600 /* APIRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E22F2B986BF000FED600 /* APIRequestService.swift */; };
+		9975E2382B9884B600FED600 /* WeatherServiceIntegrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2372B9884B600FED600 /* WeatherServiceIntegrationTest.swift */; };
+		9975E2402B9884F400FED600 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 9975E23F2B9884F400FED600 /* Nimble */; };
+		9975E2422B9891EA00FED600 /* AppMainModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2412B9891EA00FED600 /* AppMainModule.swift */; };
+		9975E2442B98927800FED600 /* WeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2432B98927800FED600 /* WeatherRepository.swift */; };
+		9975E2462B98969200FED600 /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2452B98969200FED600 /* CoreTests.swift */; };
+		9975E2482B98BE1400FED600 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2472B98BE1400FED600 /* CityCell.swift */; };
+		9975E24C2B98DDE000FED600 /* WeatherServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E24B2B98DDE000FED600 /* WeatherServiceMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +40,7 @@
 			remoteGlobalIDString = 9975E1E22B9739FB00FED600;
 			remoteInfo = Pogodynka;
 		};
-		9975E2042B9739FF00FED600 /* PBXContainerItemProxy */ = {
+		9975E2392B9884B600FED600 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9975E1DB2B9739FB00FED600 /* Project object */;
 			proxyType = 1;
@@ -49,15 +58,23 @@
 		9975E1F42B9739FF00FED600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9975E1F92B9739FF00FED600 /* PogodynkaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PogodynkaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9975E1FD2B9739FF00FED600 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
-		9975E2032B9739FF00FED600 /* PogodynkaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PogodynkaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9975E2072B9739FF00FED600 /* PogodynkaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PogodynkaUITests.swift; sourceTree = "<group>"; };
-		9975E2092B9739FF00FED600 /* PogodynkaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PogodynkaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9975E2162B97406A00FED600 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9975E2192B97417A00FED600 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		9975E21E2B97714B00FED600 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
 		9975E2202B9772C700FED600 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9975E2222B97732800FED600 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		9975E2242B97C3AF00FED600 /* SearchViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewModelTest.swift; path = PogodynkaTests/SearchViewModelTest.swift; sourceTree = SOURCE_ROOT; };
+		9975E2292B98636500FED600 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		9975E22B2B98648600FED600 /* LocationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfo.swift; sourceTree = "<group>"; };
+		9975E22D2B986A2600FED600 /* WeatherRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepositoryTests.swift; sourceTree = "<group>"; };
+		9975E22F2B986BF000FED600 /* APIRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestService.swift; sourceTree = "<group>"; };
+		9975E2352B9884B600FED600 /* APIIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APIIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9975E2372B9884B600FED600 /* WeatherServiceIntegrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceIntegrationTest.swift; sourceTree = "<group>"; };
+		9975E2412B9891EA00FED600 /* AppMainModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainModule.swift; sourceTree = "<group>"; };
+		9975E2432B98927800FED600 /* WeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepository.swift; sourceTree = "<group>"; };
+		9975E2452B98969200FED600 /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
+		9975E2472B98BE1400FED600 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
+		9975E24B2B98DDE000FED600 /* WeatherServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +93,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9975E2002B9739FF00FED600 /* Frameworks */ = {
+		9975E2322B9884B600FED600 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9975E2402B9884F400FED600 /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,8 +109,9 @@
 			children = (
 				9975E1E52B9739FB00FED600 /* Pogodynka */,
 				9975E1FC2B9739FF00FED600 /* PogodynkaTests */,
-				9975E2062B9739FF00FED600 /* PogodynkaUITests */,
+				9975E2362B9884B600FED600 /* APIIntegrationTests */,
 				9975E1E42B9739FB00FED600 /* Products */,
+				9975E23E2B9884F400FED600 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,7 +120,7 @@
 			children = (
 				9975E1E32B9739FB00FED600 /* Pogodynka.app */,
 				9975E1F92B9739FF00FED600 /* PogodynkaTests.xctest */,
-				9975E2032B9739FF00FED600 /* PogodynkaUITests.xctest */,
+				9975E2352B9884B600FED600 /* APIIntegrationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,7 +131,6 @@
 				9975E1E62B9739FB00FED600 /* AppDelegate.swift */,
 				9975E1E82B9739FC00FED600 /* SceneDelegate.swift */,
 				9975E2182B9740F600FED600 /* App */,
-				9975E21D2B97711200FED600 /* Model */,
 				9975E21C2B9770E500FED600 /* API */,
 				9975E1EF2B9739FF00FED600 /* Assets.xcassets */,
 				9975E1F12B9739FF00FED600 /* LaunchScreen.storyboard */,
@@ -126,17 +144,11 @@
 			children = (
 				9975E1FD2B9739FF00FED600 /* AppCoordinatorTests.swift */,
 				9975E2242B97C3AF00FED600 /* SearchViewModelTest.swift */,
+				9975E22D2B986A2600FED600 /* WeatherRepositoryTests.swift */,
+				9975E24B2B98DDE000FED600 /* WeatherServiceMock.swift */,
+				9975E2452B98969200FED600 /* CoreTests.swift */,
 			);
 			path = PogodynkaTests;
-			sourceTree = "<group>";
-		};
-		9975E2062B9739FF00FED600 /* PogodynkaUITests */ = {
-			isa = PBXGroup;
-			children = (
-				9975E2072B9739FF00FED600 /* PogodynkaUITests.swift */,
-				9975E2092B9739FF00FED600 /* PogodynkaUITestsLaunchTests.swift */,
-			);
-			path = PogodynkaUITests;
 			sourceTree = "<group>";
 		};
 		9975E2182B9740F600FED600 /* App */ = {
@@ -144,6 +156,7 @@
 			children = (
 				9975E2162B97406A00FED600 /* Coordinator.swift */,
 				9975E2192B97417A00FED600 /* AppCoordinator.swift */,
+				9975E2412B9891EA00FED600 /* AppMainModule.swift */,
 				9975E21B2B9770CF00FED600 /* Search */,
 			);
 			path = App;
@@ -155,6 +168,7 @@
 				9975E21E2B97714B00FED600 /* SearchCoordinator.swift */,
 				9975E2222B97732800FED600 /* SearchViewModel.swift */,
 				9975E2202B9772C700FED600 /* SearchViewController.swift */,
+				9975E2472B98BE1400FED600 /* CityCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -162,6 +176,9 @@
 		9975E21C2B9770E500FED600 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				9975E21D2B97711200FED600 /* Model */,
+				9975E2292B98636500FED600 /* WeatherService.swift */,
+				9975E22F2B986BF000FED600 /* APIRequestService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -169,8 +186,25 @@
 		9975E21D2B97711200FED600 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9975E22B2B98648600FED600 /* LocationInfo.swift */,
+				9975E2432B98927800FED600 /* WeatherRepository.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9975E2362B9884B600FED600 /* APIIntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				9975E2372B9884B600FED600 /* WeatherServiceIntegrationTest.swift */,
+			);
+			path = APIIntegrationTests;
+			sourceTree = "<group>";
+		};
+		9975E23E2B9884F400FED600 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,23 +248,26 @@
 			productReference = 9975E1F92B9739FF00FED600 /* PogodynkaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9975E2022B9739FF00FED600 /* PogodynkaUITests */ = {
+		9975E2342B9884B600FED600 /* APIIntegrationTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9975E2132B9739FF00FED600 /* Build configuration list for PBXNativeTarget "PogodynkaUITests" */;
+			buildConfigurationList = 9975E23B2B9884B600FED600 /* Build configuration list for PBXNativeTarget "APIIntegrationTests" */;
 			buildPhases = (
-				9975E1FF2B9739FF00FED600 /* Sources */,
-				9975E2002B9739FF00FED600 /* Frameworks */,
-				9975E2012B9739FF00FED600 /* Resources */,
+				9975E2312B9884B600FED600 /* Sources */,
+				9975E2322B9884B600FED600 /* Frameworks */,
+				9975E2332B9884B600FED600 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9975E2052B9739FF00FED600 /* PBXTargetDependency */,
+				9975E23A2B9884B600FED600 /* PBXTargetDependency */,
 			);
-			name = PogodynkaUITests;
-			productName = PogodynkaUITests;
-			productReference = 9975E2032B9739FF00FED600 /* PogodynkaUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			name = APIIntegrationTests;
+			packageProductDependencies = (
+				9975E23F2B9884F400FED600 /* Nimble */,
+			);
+			productName = APIIntegrationTests;
+			productReference = 9975E2352B9884B600FED600 /* APIIntegrationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -249,7 +286,7 @@
 						CreatedOnToolsVersion = 15.2;
 						TestTargetID = 9975E1E22B9739FB00FED600;
 					};
-					9975E2022B9739FF00FED600 = {
+					9975E2342B9884B600FED600 = {
 						CreatedOnToolsVersion = 15.2;
 						TestTargetID = 9975E1E22B9739FB00FED600;
 					};
@@ -273,7 +310,7 @@
 			targets = (
 				9975E1E22B9739FB00FED600 /* Pogodynka */,
 				9975E1F82B9739FF00FED600 /* PogodynkaTests */,
-				9975E2022B9739FF00FED600 /* PogodynkaUITests */,
+				9975E2342B9884B600FED600 /* APIIntegrationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -295,7 +332,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9975E2012B9739FF00FED600 /* Resources */ = {
+		9975E2332B9884B600FED600 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -309,12 +346,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9975E22A2B98636500FED600 /* WeatherService.swift in Sources */,
 				9975E2212B9772C700FED600 /* SearchViewController.swift in Sources */,
 				9975E2232B97732800FED600 /* SearchViewModel.swift in Sources */,
+				9975E2482B98BE1400FED600 /* CityCell.swift in Sources */,
+				9975E22C2B98648600FED600 /* LocationInfo.swift in Sources */,
+				9975E2422B9891EA00FED600 /* AppMainModule.swift in Sources */,
 				9975E2172B97406A00FED600 /* Coordinator.swift in Sources */,
+				9975E2442B98927800FED600 /* WeatherRepository.swift in Sources */,
 				9975E21F2B97714B00FED600 /* SearchCoordinator.swift in Sources */,
 				9975E21A2B97417A00FED600 /* AppCoordinator.swift in Sources */,
 				9975E1E72B9739FB00FED600 /* AppDelegate.swift in Sources */,
+				9975E2302B986BF100FED600 /* APIRequestService.swift in Sources */,
 				9975E1E92B9739FC00FED600 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,15 +368,17 @@
 			files = (
 				9975E2252B97C3AF00FED600 /* SearchViewModelTest.swift in Sources */,
 				9975E1FE2B9739FF00FED600 /* AppCoordinatorTests.swift in Sources */,
+				9975E2462B98969200FED600 /* CoreTests.swift in Sources */,
+				9975E22E2B986A2600FED600 /* WeatherRepositoryTests.swift in Sources */,
+				9975E24C2B98DDE000FED600 /* WeatherServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9975E1FF2B9739FF00FED600 /* Sources */ = {
+		9975E2312B9884B600FED600 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9975E2082B9739FF00FED600 /* PogodynkaUITests.swift in Sources */,
-				9975E20A2B9739FF00FED600 /* PogodynkaUITestsLaunchTests.swift in Sources */,
+				9975E2382B9884B600FED600 /* WeatherServiceIntegrationTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,10 +390,10 @@
 			target = 9975E1E22B9739FB00FED600 /* Pogodynka */;
 			targetProxy = 9975E1FA2B9739FF00FED600 /* PBXContainerItemProxy */;
 		};
-		9975E2052B9739FF00FED600 /* PBXTargetDependency */ = {
+		9975E23A2B9884B600FED600 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9975E1E22B9739FB00FED600 /* Pogodynka */;
-			targetProxy = 9975E2042B9739FF00FED600 /* PBXContainerItemProxy */;
+			targetProxy = 9975E2392B9884B600FED600 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -579,39 +624,39 @@
 			};
 			name = Release;
 		};
-		9975E2142B9739FF00FED600 /* Debug */ = {
+		9975E23C2B9884B600FED600 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y4KBF2M4M7;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nm2.rafi.forecast.PogodynkaUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nm2.rafi.forecast.APIIntegrationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Pogodynka;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pogodynka.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pogodynka";
 			};
 			name = Debug;
 		};
-		9975E2152B9739FF00FED600 /* Release */ = {
+		9975E23D2B9884B600FED600 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y4KBF2M4M7;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nm2.rafi.forecast.PogodynkaUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nm2.rafi.forecast.APIIntegrationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Pogodynka;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pogodynka.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pogodynka";
 			};
 			name = Release;
 		};
@@ -645,11 +690,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9975E2132B9739FF00FED600 /* Build configuration list for PBXNativeTarget "PogodynkaUITests" */ = {
+		9975E23B2B9884B600FED600 /* Build configuration list for PBXNativeTarget "APIIntegrationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9975E2142B9739FF00FED600 /* Debug */,
-				9975E2152B9739FF00FED600 /* Release */,
+				9975E23C2B9884B600FED600 /* Debug */,
+				9975E23D2B9884B600FED600 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -669,6 +714,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		9975E2272B97C50C00FED600 /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9975E2262B97C50C00FED600 /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+		9975E23F2B9884F400FED600 /* Nimble */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9975E2262B97C50C00FED600 /* XCRemoteSwiftPackageReference "Nimble" */;
 			productName = Nimble;
