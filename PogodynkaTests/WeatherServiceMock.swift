@@ -11,10 +11,18 @@ import Foundation
 class WeatherServiceMock: WeatherServiceProtocol {
     
     var directLocationsResult: Result<[Pogodynka.LocationInfo], NSError> = .failure(CoreTests.NSErrors.unknown)
-    private(set) var requestDirectLocationsCalled: Bool = false
+    private(set) var requestDirectLocationsCalled = false
+    
+    var weatherResult: Result<WeatherInfo, NSError> = .failure(CoreTests.NSErrors.unknown)
+    private(set) var requestWeatherCalled = false
     
     func requestDirectLocations(query: String, limit: Int, completion: @escaping (Result<[Pogodynka.LocationInfo], NSError>) -> Void) {
         requestDirectLocationsCalled = true
         completion(directLocationsResult)
+    }
+    
+    func requestWeather(lat: Double, lon: Double, completion: @escaping (Result<WeatherInfo, NSError>) -> Void) {
+        requestWeatherCalled = true
+        completion(weatherResult)
     }
 }

@@ -45,7 +45,10 @@ class APIRequestService: APIRequestServiceProtocol {
                 var object: T?
                 if let jsonData = data {
                     do {
-                        object = try JSONDecoder().decode(T.self, from: jsonData)
+                        let decoder = JSONDecoder()
+                        decoder.dateDecodingStrategy = .secondsSince1970
+                        decoder.keyDecodingStrategy = .convertFromSnakeCase
+                        object = try decoder.decode(T.self, from: jsonData)
                     } catch(let error) {
                         self.log("Parsing error \(error) request \(request?.url?.absoluteString ?? "nil")")
                     }

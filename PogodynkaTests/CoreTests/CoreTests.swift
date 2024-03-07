@@ -5,7 +5,7 @@
 //  Created by Rafal Korzynski on 06/03/2024.
 //
 
-import Foundation
+import XCTest
 
 @testable import Pogodynka
 
@@ -24,5 +24,33 @@ struct CoreTests {
     struct CityModels {
         static let wroclaw = CityModel(name: "Wrocław", lat: 50.96, lon: 16.96)
         static let dabrowa = CityModel(name: "Dąbrowa", lat: 53.40802735, lon: 20.2072225551886)
+    }
+    
+    struct WeatherInfos {
+        static let wroclawSunny: WeatherInfo = decodeObject(fileName: "weather_info")
+    }
+}
+
+extension CoreTests {
+    
+    class DummyClass {}
+    
+    static func decodeObject<T: Codable>(fileName: String) -> T {
+        do {
+            let data = try dataFromFile(fileName)
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            decoder.dateDecodingStrategy = .secondsSince1970
+            return try decoder.decode(T.self, from: data)
+        }
+        catch(let error) {
+            XCTFail("Test error : Failed during decoding dummy object from JSON!")
+            fatalError("Failed during decoding dummy object from JSON! Error \(error)")
+        }
+    }
+    
+    static func dataFromFile(_ fileName: String) throws -> Data {
+        let url = Bundle(for: DummyClass.self).url(forResource: fileName, withExtension: "json")!
+        return try Data(contentsOf: url)
     }
 }

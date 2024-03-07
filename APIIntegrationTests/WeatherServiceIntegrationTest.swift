@@ -32,4 +32,15 @@ final class WeatherServiceIntegrationTest: XCTestCase {
         })
         expect(locationInfos).toEventuallyNot(beEmpty(), timeout: .seconds(3))
     }
+    
+    func test_getWeather_returnsData() {
+        
+        var weatherInfo: WeatherInfo?
+        
+        let wroclaw = CoreTests.LocationInfos.wroclaw
+        sut.requestWeather(lat: wroclaw.lat, lon: wroclaw.lon) { result in
+            weatherInfo = try? result.get()
+        }
+        expect(weatherInfo).toEventuallyNot(beNil(), timeout: .seconds(3))
+    }
 }
