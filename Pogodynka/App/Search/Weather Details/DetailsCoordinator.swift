@@ -21,7 +21,8 @@ class DetailsCoordinator: Coordinator {
     
     func start() {
         let detailsVC = DetailsViewController()
-        let detailsModel = DetailsModel(lat: cityModel.lat, lon: cityModel.lon, name: cityModel.name)
+        let repository = AppMainModule.injectWeatherRepository()
+        let detailsModel = DetailsViewModel(city: cityModel, repository: repository)
         detailsVC.detailsModel = detailsModel
         detailsVC.goBackBlock = { [weak self] in
             self?.navigate(.back)
