@@ -49,7 +49,7 @@ final class WeatherRepositoryTest: XCTestCase {
     }
     
     func test_getLocationsFailure_returnsLocationInfo() {
-        let expectedResult = [CoreTests.LocationInfos.Sample.wroclaw]
+        let expectedResult = [CoreTests.LocationInfos.wroclaw]
         serviceMock.directLocationsResult = .success(expectedResult)
         var completionCalled = false
         var returnedResult: [LocationInfo]?

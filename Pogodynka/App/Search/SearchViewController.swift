@@ -19,7 +19,6 @@ class SearchViewController: UIViewController {
     
     private var bucket = Set<AnyCancellable>()
     private var searchTextPublisher = CurrentValueSubject<String, Never>("")
-    private var cities: [CityModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,8 +54,8 @@ class SearchViewController: UIViewController {
     }
     
     private func updateUI() {
-        model.$cities.sink { [weak self] newCities in
-            self?.update(cities: newCities)
+        model.citiesPublisher.sink { [weak self] newCities in
+            self?.update()
         }.store(in: &bucket)
         
         searchTextPublisher.debounce(for: .milliseconds(500), scheduler: RunLoop.main)
@@ -71,8 +70,7 @@ class SearchViewController: UIViewController {
         self.model.searchCities(with: typedText)
     }
     
-    private func update(cities: [CityModel]) {
-        self.cities = cities
+    private func update() {
         self.loadingView.stopAnimating()
         self.tableView.reloadData()
     }
@@ -91,6 +89,12 @@ extension SearchViewController: UISearchBarDelegate {
             searchTextPublisher.send(typedText)
         }
         return shouldChangeText
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            searchTextPublisher.send("")
+        }
     }
 }
 
@@ -145,7 +149,7 @@ extension SearchViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cities.count
+        return model.citiesCount
     }
 }
 

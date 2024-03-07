@@ -30,7 +30,7 @@ final class SearchViewModelTest: XCTestCase {
     }
 
     func test_init_returnsEmptyCities() {
-        expect(self.sut.cities).to(beEmpty())
+        expect(self.sut.citiesCount).to(equal(0))
     }
     
     func test_init_returnsTitle() {
@@ -50,8 +50,75 @@ final class SearchViewModelTest: XCTestCase {
         return (validRange != nil && validRange?.isEmpty == false)
     }
     
-    func test_searchCities_returnNothing() {
+    func test_searchCities_returnsNothing() {
+        let modelSpy = SearchViewModelSpy(model: sut)
+        
         sut.searchCities(with: "")
-        expect(self.sut.cities).to(beEmpty())
+        
+        expect(self.sut.citiesCount).to(equal(0))
+        expect(modelSpy.updatedCities).to(beEmpty())
+    }
+    
+    func test_searchCitiesSuccess_returnsData() {
+        let testedCity = [CoreTests.LocationInfos.wroclaw]
+        let expectedCity = [CoreTests.CityModels.wroclaw]
+        serviceMock.directLocationsResult = .success(testedCity)
+        
+        let modelSpy = SearchViewModelSpy(model: sut)
+        
+        sut.searchCities(with: "Wroclaw")
+        
+        expect(self.sut.citiesCount).to(beGreaterThan(0))
+        expect(modelSpy.updatedCities).toNot(beEmpty())
+        expect(modelSpy.updatedCities).to(equal(expectedCity))
+    }
+    
+    func test_CityAtAfterInit_ReturnsNil() {
+        let indexPath0 = IndexPath(row: 0, section: 0)
+        let indexPath1 = IndexPath(row: 1, section: 0)
+        
+        expect(self.sut.city(at: indexPath0)).to(beNil())
+        expect(self.sut.city(at: indexPath1)).to(beNil())
+    }
+    
+    func test_CityAtAfterSearch_ReturnsCity() {
+        let testedCity = [CoreTests.LocationInfos.wroclaw]
+        serviceMock.directLocationsResult = .success(testedCity)
+        
+        sut.searchCities(with: "Wroclaw")
+        
+        let indexPath0 = IndexPath(row: 0, section: 0)
+        let indexPath1 = IndexPath(row: 1, section: 0)
+        
+        expect(self.sut.city(at: indexPath0)).toNot(beNil())
+        expect(self.sut.city(at: indexPath1)).to(beNil())
+    }
+    
+    func test_CityAtAfterSearchFails_ReturnsNil() {
+        sut.searchCities(with: "")
+        
+        let indexPath0 = IndexPath(row: 0, section: 0)
+        
+        expect(self.sut.city(at: indexPath0)).to(beNil())
+    }
+    
+    func test_TwoSearchActions_ReturnsLastCity() {
+        let testedCity = [CoreTests.LocationInfos.wroclaw]
+        serviceMock.directLocationsResult = .success(testedCity)
+        
+        sut.searchCities(with: "Wroclaw")
+        
+        let lastTestedCity = [CoreTests.LocationInfos.dabrowa]
+        serviceMock.directLocationsResult = .success(lastTestedCity)
+        
+        sut.searchCities(with: "Dabrowa")
+        
+        let indexPath0 = IndexPath(row: 0, section: 0)
+        let returnedCity = sut.city(at: indexPath0)
+        let expectedCity = CoreTests.CityModels.dabrowa
+        
+        expect(returnedCity).toNot(beNil())
+        expect(returnedCity).to(equal(expectedCity))
+        expect(returnedCity?.name).to(equal(expectedCity.name))
     }
 }

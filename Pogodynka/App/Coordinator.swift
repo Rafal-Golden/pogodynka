@@ -15,4 +15,6 @@ enum Destination {
 protocol Coordinator {
     func start()
     func navigate(_ destination: Destination)
+    
+    var children: [Coordinator] { get set }
 }

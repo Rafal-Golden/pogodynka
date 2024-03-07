@@ -10,6 +10,7 @@ import UIKit
 class SearchCoordinator: Coordinator {
     
     private var navigationController: UINavigationController
+    internal var children: [Coordinator] = []
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController        
@@ -25,6 +26,9 @@ class SearchCoordinator: Coordinator {
             case .back:
                 break
             case .weatherDetails(let city):
+                let coordinator = DetailsCoordinator(navigationController: navigationController, cityModel: city)
+                coordinator.start()
+                children.append(coordinator)
                 break
         }
     }

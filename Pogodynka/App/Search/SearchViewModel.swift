@@ -6,20 +6,36 @@
 //
 
 import UIKit
+import Combine
 
-struct CityModel {
+struct CityModel: Equatable {
     let name: String
     let lat, lon: Double
 }
 
 class SearchViewModel {
+    
+    var citiesPublisher: AnyPublisher<[CityModel], Never> {
+        return citiesSubject.eraseToAnyPublisher()
+    }
+    var citiesCount: Int {
+        return citiesSubject.value.count
+    }
+    
+    private var citiesSubject = CurrentValueSubject<[CityModel], Never>([])
+    private var cities: [CityModel] {
+        set {
+            citiesSubject.send(newValue)
+        }
+        get {
+            return citiesSubject.value
+        }
+    }
+    
+    var weatherRepository: WeatherRepository
     var matchRegExp: String
     var bgColor: UIColor
     var title: String
-    
-    @Published var cities: [CityModel] = []
-    
-    var weatherRepository: WeatherRepository
     
     init(weatherRepository: WeatherRepository) {
         matchRegExp = "^([a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+(?: )?)+$"
@@ -30,7 +46,7 @@ class SearchViewModel {
     
     func searchCities(with searchPhrase: String) {
         guard searchPhrase.count > 0 else {
-            self.cities = []
+            cities = []
             return
         }
             

@@ -16,10 +16,13 @@ struct CoreTests {
     }
     
     struct LocationInfos {
-        struct Sample {
-            static let wroclaw = LocationInfo(name: "Wrocław", lat: 50.96, lon: 16.96, country: "PL", state: "Dolnyśląsk")
-            static let dabrowa = LocationInfo(name: "Dąbrowa", lat: 53.40802735, lon: 20.2072225551886, country:"PL", state: "Warmińsko Mazurskie")
-            static let locations = [wroclaw, dabrowa]
-        }
+        static let wroclaw = LocationInfo(name: "Wrocław", lat: 50.96, lon: 16.96, country: "PL", state: "Dolnyśląsk")
+        static let dabrowa = LocationInfo(name: "Dąbrowa", lat: 53.40802735, lon: 20.2072225551886, country:"PL", state: "Warmińsko Mazurskie")
+        static let locations = [wroclaw, dabrowa]
+    }
+    
+    struct CityModels {
+        static let wroclaw = CityModel(name: "Wrocław", lat: 50.96, lon: 16.96)
+        static let dabrowa = CityModel(name: "Dąbrowa", lat: 53.40802735, lon: 20.2072225551886)
     }
 }

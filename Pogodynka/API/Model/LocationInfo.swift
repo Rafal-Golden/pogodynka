@@ -12,5 +12,5 @@ public struct LocationInfo: Codable, Equatable {
     var name: String
     var lat, lon: Double
     var country: String
-    var state: String
+    var state: String?
 }
