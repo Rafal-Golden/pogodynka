@@ -36,11 +36,13 @@ class SearchViewModel {
     var matchRegExp: String
     var bgColor: UIColor
     var title: String
+    var noResultsMessage: String
     
     init(weatherRepository: WeatherRepository) {
         matchRegExp = "^([a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+(?: )?)+$"
-        bgColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
-        title = "Search your city"
+        bgColor = AppColors.background
+        title = NSLocalizedString("Search your city", comment: "")
+        noResultsMessage = NSLocalizedString("No results, try typing further.", comment: "")
         self.weatherRepository = weatherRepository
     }
     

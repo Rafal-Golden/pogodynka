@@ -27,6 +27,7 @@ class DetailsViewModel {
     var lat: Double, lon: Double
     var name: String
     var bgColor: UIColor
+    var textColor: UIColor
     
     @Published var weather: WeatherViewModel?
     @Published var errorInfo: String?
@@ -35,7 +36,8 @@ class DetailsViewModel {
         self.lat = lat
         self.lon = lon
         self.name = name
-        self.bgColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
+        self.bgColor = AppColors.background
+        self.textColor = AppColors.body
         self.repository = repository
         self.weather = nil
         self.errorInfo = nil
@@ -63,14 +65,14 @@ class DetailsViewModel {
         var weatherVM = WeatherViewModel()
         let formater = DateFormatter()
         formater.dateFormat = "HH:mm dd/MM"
-        weatherVM.dateString = formater.string(from: weatherInfo.dt)
+        weatherVM.dateString = NSLocalizedString("Weather now, at hour ", comment: "") + "\(formater.string(from: weatherInfo.dt))"
         formater.dateFormat = "HH:mm"
         weatherVM.sunset = formater.string(from: weatherInfo.sys.sunset)
         weatherVM.sunrise = formater.string(from: weatherInfo.sys.sunrise)
         weatherVM.temp = "\(weatherInfo.main.temp)°C"
-        weatherVM.tempPerceivedTitle = "Odczuwalna"
+        weatherVM.tempPerceivedTitle = NSLocalizedString("Perceived", comment: "")
         weatherVM.tempPerceivedValue = "\(weatherInfo.main.feelsLike)°C"
-        weatherVM.pressureTitle = "Ciśnienie"
+        weatherVM.pressureTitle = NSLocalizedString("Pressure", comment: "")
         weatherVM.pressureValue = "\(weatherInfo.main.pressure) hPa"
         
         weatherVM.description = weatherInfo.weather.first?.description

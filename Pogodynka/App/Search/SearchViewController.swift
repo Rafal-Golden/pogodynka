@@ -16,6 +16,7 @@ class SearchViewController: UIViewController {
     private var searchBar: UISearchBar!
     private var tableView: UITableView!
     private var loadingView: UIActivityIndicatorView!
+    private var noResultsLabel: NoResultLabel!
     
     private var bucket = Set<AnyCancellable>()
     private var searchTextPublisher = CurrentValueSubject<String, Never>("")
@@ -31,6 +32,7 @@ class SearchViewController: UIViewController {
         configureSearchBar()
         configureTableView()
         configureLoadingView()
+        configureNoResultsLabel()
         
         view.backgroundColor = model.bgColor
         self.title = model.title
@@ -73,6 +75,42 @@ class SearchViewController: UIViewController {
     private func update() {
         self.loadingView.stopAnimating()
         self.tableView.reloadData()
+        self.noResultsLabel.isHidden = model.citiesCount > 0 || searchTextPublisher.value.isEmpty
+    }
+}
+
+extension SearchViewController {
+    func configureLoadingView() {
+        self.loadingView = UIActivityIndicatorView(style: .large)
+        loadingView.color = .black
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(loadingView)
+        
+        let constraints = [
+            loadingView.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
+            loadingView.centerYAnchor.constraint(equalTo: tableView.centerYAnchor),
+        ]
+        NSLayoutConstraint.activate(constraints)
+        
+        loadingView.hidesWhenStopped = true
+        loadingView.stopAnimating()
+    }
+    
+    func configureNoResultsLabel() {
+        noResultsLabel = NoResultLabel(text: model.noResultsMessage,
+                                       textColor: AppColors.hintText,
+                                       backgroundColor: AppColors.hintBackground,
+                                       padding: 20.0)
+        noResultsLabel.isHidden = true
+        noResultsLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(noResultsLabel)
+        
+        let constraints = [
+            noResultsLabel.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
+            noResultsLabel.centerYAnchor.constraint(equalTo: tableView.centerYAnchor),
+        ]
+        NSLayoutConstraint.activate(constraints)
     }
 }
 
@@ -121,22 +159,6 @@ extension SearchViewController: UITableViewDataSource {
         tableView.backgroundColor = .clear
         tableView.dataSource = self
         tableView.delegate = self
-    }
-    
-    func configureLoadingView() {
-        self.loadingView = UIActivityIndicatorView(style: .large)
-        loadingView.color = .black
-        loadingView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(loadingView)
-        
-        let constraints = [
-            loadingView.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
-            loadingView.centerYAnchor.constraint(equalTo: tableView.centerYAnchor),
-        ]
-        NSLayoutConstraint.activate(constraints)
-        
-        loadingView.hidesWhenStopped = true
-        loadingView.stopAnimating()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

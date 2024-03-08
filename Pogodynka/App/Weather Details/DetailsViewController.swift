@@ -17,7 +17,7 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
+        view.backgroundColor = detailsModel.bgColor
         setupUI()
         fetchWeather()
     }
@@ -25,8 +25,11 @@ class DetailsViewController: UIViewController {
     private let nameLabel = UILabel()
     private let weatherLabel = UILabel()
     private let temperatureLabel = UILabel()
+    private let tempDescriptionLabel = UILabel()
     private let perceivedTempLabel = UILabel()
+    private let perceivedTitleLabel = UILabel()
     private let pressureLabel = UILabel()
+    private let pressureTitleLabel = UILabel()
     private let weatherImageView = UIImageView()
         
     func fetchWeather() {
@@ -45,23 +48,36 @@ class DetailsViewController: UIViewController {
         guard let weather else { return }
         
         nameLabel.text = detailsModel.name
-        weatherLabel.text = "Pogoda teraz - dzisiaj godz. \(weather.dateString ?? "")"
+        weatherLabel.text = weather.dateString
         temperatureLabel.text = weather.temp
+        tempDescriptionLabel.text = weather.description
         perceivedTempLabel.text = weather.tempPerceivedValue
         pressureLabel.text = weather.pressureValue
+        pressureTitleLabel.text = weather.pressureTitle
+        perceivedTitleLabel.text = weather.tempPerceivedTitle
         
         weatherImageView.image = UIImage()
     }
         
-    private func setupUI() {
+    private func setupLabels() {
+        let labels = [nameLabel, weatherLabel, temperatureLabel, tempDescriptionLabel, perceivedTempLabel, pressureTitleLabel, pressureLabel, perceivedTitleLabel]
+        for label in labels {
+            label.textColor = detailsModel.textColor
+        }
+        
         nameLabel.font = .systemFont(ofSize: 32.0)
         temperatureLabel.font = .systemFont(ofSize: 40.0)
         weatherImageView.translatesAutoresizingMaskIntoConstraints = false
-        weatherImageView.backgroundColor = .purple.withAlphaComponent(0.25)
+        weatherImageView.backgroundColor = .purple.withAlphaComponent(0.75)
+    }
+    
+    private func setupUI() {
         
-        let stackView = UIStackView(arrangedSubviews: [nameLabel, weatherLabel, createWeatherStackView()])
+        setupLabels()
+        
+        let stackView = UIStackView(arrangedSubviews: [nameLabel, weatherLabel, createWeatherStackView(), createPerceivedStackView(), createPressureStackView()])
         stackView.axis = .vertical
-        stackView.spacing = 10
+        stackView.spacing = 20
         stackView.alignment = .leading
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -78,11 +94,36 @@ class DetailsViewController: UIViewController {
         NSLayoutConstraint.activate(constraints)
     }
     
-    private func createWeatherStackView() -> UIStackView {
-        let stackView = UIStackView(arrangedSubviews: [weatherImageView, temperatureLabel, perceivedTempLabel, pressureLabel])
+    private func createHStackView(views: [UIView]) -> UIStackView {
+        let stackView = UIStackView(arrangedSubviews: views)
         stackView.axis = .horizontal
+        stackView.spacing = 16
+        
+        return stackView
+    }
+    
+    private func createPressureStackView() -> UIStackView {
+        return createHStackView(views: [pressureTitleLabel, pressureLabel])
+    }
+    
+    private func createWeatherStackView() -> UIStackView {
+        return createHStackView(views: [weatherImageView, createTempStackView()])
+    }
+    
+    private func createVStackView(views: [UIView]) -> UIStackView {
+        let stackView = UIStackView(arrangedSubviews: views)
+        stackView.axis = .vertical
+        stackView.alignment = .leading
         stackView.spacing = 10
         
         return stackView
+    }
+    
+    private func createTempStackView() -> UIStackView {
+        return createVStackView(views: [tempDescriptionLabel, temperatureLabel])
+    }
+    
+    private func createPerceivedStackView() -> UIStackView {
+        return createHStackView(views: [perceivedTitleLabel, perceivedTempLabel])
     }
 }
