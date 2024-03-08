@@ -36,15 +36,23 @@ enum AppColors {
         static let neutral30 = UIColor(rgb: 0x444444)
         static let neutral95 = UIColor(rgb: 0xEEEBE8)
         static let neutral100 = UIColor(rgb: 0xFFFFFF)
+        
+        static let blue90 = UIColor(rgb: 0x084AD9)
+        static let blue10 = UIColor(rgb: 0x08D4FF)
+        
+        static let red90 = UIColor(rgb: 0xC52600)
+        static let red10 = UIColor(rgb: 0xFFA4A5)
+        
+        static let orange60 = UIColor(rgb: 0xFEC509)
     }
     
     //background
     static var background = dynamicColor(light: Palette.neutral95, dark: Palette.neutral10)
     static var body = dynamicColor(light: Palette.neutral30, dark: Palette.neutral95)
-    static var hintBackground = UIColor(rgb: 0xFEC509).withAlphaComponent(0.90)
+    static var hintBackground = Palette.orange60.withAlphaComponent(0.90)
     static var hintText = dynamicColor(light: Palette.neutral10, dark: Palette.primary10)
     
     static var tempBlack = body
-    static var tempBlue = dynamicColor(light: UIColor(rgb: 0x084AD9), dark: UIColor(rgb: 0x08D4FF))
-    static var tempRed = dynamicColor(light: UIColor(rgb: 0xC52600), dark: UIColor(rgb: 0xFFA4A5))
+    static var tempBlue = dynamicColor(light: Palette.blue90, dark: Palette.blue10)
+    static var tempRed = dynamicColor(light: Palette.red90, dark: Palette.red10)
 }
