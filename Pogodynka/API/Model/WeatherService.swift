@@ -35,6 +35,7 @@ class WeatherService: WeatherServiceProtocol {
         let request = requestService.request(method: "GET", path: path, queryItems: queryItems)
         directLocationsTask?.cancel()
         directLocationsTask = requestService.runJson(request: request) { result in
+            print(">>> request [direct] query \(query)")
             completion(result)
         }
     }

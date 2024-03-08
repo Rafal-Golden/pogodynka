@@ -41,6 +41,10 @@ class DetailsViewController: UIViewController {
             
         }.store(in: &bucket)
         
+        detailsModel.$iconImage.sink { [weak self] iconImage in
+            self?.weatherImageView.image = iconImage
+        }.store(in: &bucket)
+        
         detailsModel.fetchWeather()
     }
     
@@ -55,8 +59,12 @@ class DetailsViewController: UIViewController {
         pressureLabel.text = weather.pressureValue
         pressureTitleLabel.text = weather.pressureTitle
         perceivedTitleLabel.text = weather.tempPerceivedTitle
+        temperatureLabel.textColor = weather.tempColor
         
-        weatherImageView.image = UIImage()
+        weatherImageView.backgroundColor = weather.tempColor.withAlphaComponent(0.1)
+        weatherImageView.layer.cornerRadius = 10
+        weatherImageView.clipsToBounds = true
+        nameLabel.backgroundColor = weatherImageView.backgroundColor
     }
         
     private func setupLabels() {
@@ -68,7 +76,7 @@ class DetailsViewController: UIViewController {
         nameLabel.font = .systemFont(ofSize: 32.0)
         temperatureLabel.font = .systemFont(ofSize: 40.0)
         weatherImageView.translatesAutoresizingMaskIntoConstraints = false
-        weatherImageView.backgroundColor = .purple.withAlphaComponent(0.75)
+        weatherImageView.backgroundColor = .clear
     }
     
     private func setupUI() {
@@ -84,7 +92,7 @@ class DetailsViewController: UIViewController {
         view.addSubview(stackView)
         
         let constraints = [
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 20),
             weatherImageView.widthAnchor.constraint(equalToConstant: 60.0),

@@ -13,16 +13,17 @@ struct WeatherViewModel {
     var sunrise: String? = nil, sunset: String? = nil
     var description: String? = nil
     var temp: String? = nil
+    var tempColor: UIColor = .black
     var tempPerceivedTitle: String? = nil
     var tempPerceivedValue: String? = nil
     var pressureTitle: String? = nil
     var pressureValue: String? = nil
-    var weatherIcon: String? = nil
 }
 
 class DetailsViewModel {
     
     private var repository: WeatherRepositoryProtocol
+    var iconImageDownloader: IconImageDownloader?
     
     var lat: Double, lon: Double
     var name: String
@@ -31,6 +32,7 @@ class DetailsViewModel {
     
     @Published var weather: WeatherViewModel?
     @Published var errorInfo: String?
+    @Published var iconImage: UIImage?
     
     init(lat: Double, lon: Double, name: String, repository: WeatherRepositoryProtocol) {
         self.lat = lat
@@ -54,6 +56,14 @@ class DetailsViewModel {
         }
     }
     
+    private func fetchWeatherIcon(name: String) {
+        guard let downloader = self.iconImageDownloader else { return }
+        
+        downloader.download(iconName: name) { [weak self] image in
+            self?.iconImage = image
+        }
+    }
+    
     func update(weatherInfo: WeatherInfo?, error: NSError?) {
         self.errorInfo = error?.localizedDescription
         
@@ -70,6 +80,7 @@ class DetailsViewModel {
         weatherVM.sunset = formater.string(from: weatherInfo.sys.sunset)
         weatherVM.sunrise = formater.string(from: weatherInfo.sys.sunrise)
         weatherVM.temp = "\(weatherInfo.main.temp)°C"
+        weatherVM.tempColor = tempColor(for: weatherInfo.main.temp.rounded())
         weatherVM.tempPerceivedTitle = NSLocalizedString("Perceived", comment: "")
         weatherVM.tempPerceivedValue = "\(weatherInfo.main.feelsLike)°C"
         weatherVM.pressureTitle = NSLocalizedString("Pressure", comment: "")
@@ -77,7 +88,15 @@ class DetailsViewModel {
         
         weatherVM.description = weatherInfo.weather.first?.description
         
+        if let weatherIcon = weatherInfo.weather.first?.icon {
+            fetchWeatherIcon(name: weatherIcon)
+        }
+        
         self.weather = weatherVM
+    }
+    
+    private func tempColor(for temp: Double) -> UIColor {
+        return temp < 10.0 ? AppColors.tempBlue : (temp < 20.0 ? AppColors.tempBlack : AppColors.tempRed)
     }
 }
 

@@ -43,4 +43,8 @@ enum AppColors {
     static var body = dynamicColor(light: Palette.neutral30, dark: Palette.neutral95)
     static var hintBackground = UIColor(rgb: 0xFEC509).withAlphaComponent(0.90)
     static var hintText = dynamicColor(light: Palette.neutral10, dark: Palette.primary10)
+    
+    static var tempBlack = body
+    static var tempBlue = dynamicColor(light: UIColor(rgb: 0x084AD9), dark: UIColor(rgb: 0x08D4FF))
+    static var tempRed = dynamicColor(light: UIColor(rgb: 0xC52600), dark: UIColor(rgb: 0xFFA4A5))
 }

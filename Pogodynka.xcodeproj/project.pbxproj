@@ -42,6 +42,8 @@
 		9975E2642B9B099300FED600 /* UIColor+intValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2632B9B099300FED600 /* UIColor+intValue.swift */; };
 		9975E2672B9B17C000FED600 /* NoResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2662B9B17C000FED600 /* NoResultLabel.swift */; };
 		9975E2692B9B1DA000FED600 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9975E2682B9B1DA000FED600 /* Localizable.xcstrings */; };
+		9975E26B2B9B5DE100FED600 /* IconImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E26A2B9B5DE100FED600 /* IconImageDownloader.swift */; };
+		9975E26D2B9B6A1500FED600 /* IconImageDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E26C2B9B6A1500FED600 /* IconImageDownloaderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		9975E2632B9B099300FED600 /* UIColor+intValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+intValue.swift"; sourceTree = "<group>"; };
 		9975E2662B9B17C000FED600 /* NoResultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultLabel.swift; sourceTree = "<group>"; };
 		9975E2682B9B1DA000FED600 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		9975E26A2B9B5DE100FED600 /* IconImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IconImageDownloader.swift; path = Pogodynka/API/Model/IconImageDownloader.swift; sourceTree = SOURCE_ROOT; };
+		9975E26C2B9B6A1500FED600 /* IconImageDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImageDownloaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,7 @@
 				9975E22D2B986A2600FED600 /* WeatherRepositoryTests.swift */,
 				9975E24B2B98DDE000FED600 /* WeatherServiceMock.swift */,
 				9975E25C2B9A316B00FED600 /* DetailsViewModelTests.swift */,
+				9975E26C2B9B6A1500FED600 /* IconImageDownloaderTests.swift */,
 				9975E2542B9A078300FED600 /* SearchViewModelSpy.swift */,
 				9975E2602B9A3F6000FED600 /* DetailsViewModelSpy.swift */,
 				9975E2592B9A29C500FED600 /* CoreTests */,
@@ -207,7 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				9975E21D2B97711200FED600 /* Model */,
-				9975E2292B98636500FED600 /* WeatherService.swift */,
 				9975E22F2B986BF000FED600 /* APIRequestService.swift */,
 			);
 			path = API;
@@ -217,8 +221,10 @@
 			isa = PBXGroup;
 			children = (
 				9975E22B2B98648600FED600 /* LocationInfo.swift */,
-				9975E2432B98927800FED600 /* WeatherRepository.swift */,
 				9975E2562B9A1B5200FED600 /* WeatherInfo.swift */,
+				9975E2432B98927800FED600 /* WeatherRepository.swift */,
+				9975E2292B98636500FED600 /* WeatherService.swift */,
+				9975E26A2B9B5DE100FED600 /* IconImageDownloader.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 				9975E21A2B97417A00FED600 /* AppCoordinator.swift in Sources */,
 				9975E1E72B9739FB00FED600 /* AppDelegate.swift in Sources */,
 				9975E2672B9B17C000FED600 /* NoResultLabel.swift in Sources */,
+				9975E26B2B9B5DE100FED600 /* IconImageDownloader.swift in Sources */,
 				9975E24F2B99F1AC00FED600 /* DetailsCoordinator.swift in Sources */,
 				9975E2302B986BF100FED600 /* APIRequestService.swift in Sources */,
 				9975E1E92B9739FC00FED600 /* SceneDelegate.swift in Sources */,
@@ -437,6 +444,7 @@
 				9975E2552B9A078300FED600 /* SearchViewModelSpy.swift in Sources */,
 				9975E2612B9A3F6000FED600 /* DetailsViewModelSpy.swift in Sources */,
 				9975E1FE2B9739FF00FED600 /* AppCoordinatorTests.swift in Sources */,
+				9975E26D2B9B6A1500FED600 /* IconImageDownloaderTests.swift in Sources */,
 				9975E2462B98969200FED600 /* CoreTests.swift in Sources */,
 				9975E25D2B9A316B00FED600 /* DetailsViewModelTests.swift in Sources */,
 				9975E22E2B986A2600FED600 /* WeatherRepositoryTests.swift in Sources */,

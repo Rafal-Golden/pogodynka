@@ -23,6 +23,7 @@ class DetailsCoordinator: Coordinator {
         let detailsVC = DetailsViewController()
         let repository = AppMainModule.injectWeatherRepository()
         let detailsModel = DetailsViewModel(city: cityModel, repository: repository)
+        detailsModel.iconImageDownloader = IconImageDownloader()
         detailsVC.detailsModel = detailsModel
         detailsVC.goBackBlock = { [weak self] in
             self?.navigate(.back)
