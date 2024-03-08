@@ -44,6 +44,8 @@
 		9975E2692B9B1DA000FED600 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9975E2682B9B1DA000FED600 /* Localizable.xcstrings */; };
 		9975E26B2B9B5DE100FED600 /* IconImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E26A2B9B5DE100FED600 /* IconImageDownloader.swift */; };
 		9975E26D2B9B6A1500FED600 /* IconImageDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E26C2B9B6A1500FED600 /* IconImageDownloaderTests.swift */; };
+		9975E26F2B9B851100FED600 /* SearchHistoryStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E26E2B9B851100FED600 /* SearchHistoryStorageTests.swift */; };
+		9975E2712B9B8C5E00FED600 /* SearchHistoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2702B9B8C5E00FED600 /* SearchHistoryStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,8 @@
 		9975E2682B9B1DA000FED600 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9975E26A2B9B5DE100FED600 /* IconImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IconImageDownloader.swift; path = Pogodynka/API/Model/IconImageDownloader.swift; sourceTree = SOURCE_ROOT; };
 		9975E26C2B9B6A1500FED600 /* IconImageDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImageDownloaderTests.swift; sourceTree = "<group>"; };
+		9975E26E2B9B851100FED600 /* SearchHistoryStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryStorageTests.swift; sourceTree = "<group>"; };
+		9975E2702B9B8C5E00FED600 /* SearchHistoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,7 @@
 				9975E24B2B98DDE000FED600 /* WeatherServiceMock.swift */,
 				9975E25C2B9A316B00FED600 /* DetailsViewModelTests.swift */,
 				9975E26C2B9B6A1500FED600 /* IconImageDownloaderTests.swift */,
+				9975E26E2B9B851100FED600 /* SearchHistoryStorageTests.swift */,
 				9975E2542B9A078300FED600 /* SearchViewModelSpy.swift */,
 				9975E2602B9A3F6000FED600 /* DetailsViewModelSpy.swift */,
 				9975E2592B9A29C500FED600 /* CoreTests */,
@@ -204,6 +209,7 @@
 				9975E2662B9B17C000FED600 /* NoResultLabel.swift */,
 				9975E2472B98BE1400FED600 /* CityCell.swift */,
 				9975E2222B97732800FED600 /* SearchViewModel.swift */,
+				9975E2702B9B8C5E00FED600 /* SearchHistoryStorage.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -429,6 +435,7 @@
 				9975E1E72B9739FB00FED600 /* AppDelegate.swift in Sources */,
 				9975E2672B9B17C000FED600 /* NoResultLabel.swift in Sources */,
 				9975E26B2B9B5DE100FED600 /* IconImageDownloader.swift in Sources */,
+				9975E2712B9B8C5E00FED600 /* SearchHistoryStorage.swift in Sources */,
 				9975E24F2B99F1AC00FED600 /* DetailsCoordinator.swift in Sources */,
 				9975E2302B986BF100FED600 /* APIRequestService.swift in Sources */,
 				9975E1E92B9739FC00FED600 /* SceneDelegate.swift in Sources */,
@@ -446,6 +453,7 @@
 				9975E1FE2B9739FF00FED600 /* AppCoordinatorTests.swift in Sources */,
 				9975E26D2B9B6A1500FED600 /* IconImageDownloaderTests.swift in Sources */,
 				9975E2462B98969200FED600 /* CoreTests.swift in Sources */,
+				9975E26F2B9B851100FED600 /* SearchHistoryStorageTests.swift in Sources */,
 				9975E25D2B9A316B00FED600 /* DetailsViewModelTests.swift in Sources */,
 				9975E22E2B986A2600FED600 /* WeatherRepositoryTests.swift in Sources */,
 				9975E24C2B98DDE000FED600 /* WeatherServiceMock.swift in Sources */,

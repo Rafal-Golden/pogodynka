@@ -103,6 +103,9 @@ class APIRequestService: APIRequestServiceProtocol {
             }
             else if statusCode == 200 {
                 completion(.success(data))
+            } else {
+                let error = self.ourError(code: 404, description: "Unexpected error!")
+                completion(.failure(error))
             }
         }
         dataTask.resume()

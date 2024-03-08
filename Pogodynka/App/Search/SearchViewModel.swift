@@ -32,18 +32,25 @@ class SearchViewModel {
         }
     }
     
-    var weatherRepository: WeatherRepository
+    private var weatherRepository: WeatherRepositoryProtocol
+    private var searchHistoryStorage: SearchHistoryStorage
+    
     var matchRegExp: String
     var bgColor: UIColor
     var title: String
     var noResultsMessage: String
     
-    init(weatherRepository: WeatherRepository) {
+    var initialSearchPhrase: String? {
+        return searchHistoryStorage.loadLast()
+    }
+    
+    init(weatherRepository: WeatherRepositoryProtocol, searchHistory: SearchHistoryStorage) {
         matchRegExp = "^([a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+(?: )?)+$"
         bgColor = AppColors.background
         title = NSLocalizedString("Search your city", comment: "")
         noResultsMessage = NSLocalizedString("No results, try typing further.", comment: "")
         self.weatherRepository = weatherRepository
+        self.searchHistoryStorage = searchHistory
     }
     
     func searchCities(with searchPhrase: String) {
@@ -60,7 +67,7 @@ class SearchViewModel {
                     }
                     self?.cities = newCities
                     
-                case .failure(let error):
+                case .failure(_):
                     self?.cities = []
             }
         }
@@ -71,5 +78,11 @@ class SearchViewModel {
             return nil
         }
         return cities[indexPath.row]
+    }
+    
+    func addHistory(searchPhrase: String) {
+        if searchPhrase != searchHistoryStorage.loadLast() {
+            searchHistoryStorage.add(string: searchPhrase)
+        }
     }
 }

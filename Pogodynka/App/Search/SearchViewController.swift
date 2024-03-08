@@ -28,6 +28,15 @@ class SearchViewController: UIViewController {
         updateUI()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let searchPhrase = model.initialSearchPhrase {
+            searchBar.text = searchPhrase
+            searchTextPublisher.send(searchPhrase)
+        }
+    }
+    
     private func configureUI() {
         configureSearchBar()
         configureTableView()
@@ -76,6 +85,12 @@ class SearchViewController: UIViewController {
         self.loadingView.stopAnimating()
         self.tableView.reloadData()
         self.noResultsLabel.isHidden = model.citiesCount > 0 || searchTextPublisher.value.isEmpty
+    }
+    
+    fileprivate func addSearchToHistory() {
+        if let searchPhrase = searchBar.text, searchPhrase.isEmpty == false {
+            model.addHistory(searchPhrase: searchPhrase)
+        }
     }
 }
 
@@ -179,6 +194,7 @@ extension SearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let selectedCity = model.city(at: indexPath) {
+            addSearchToHistory()
             goToWeatherDetails?(selectedCity)
         }
     }

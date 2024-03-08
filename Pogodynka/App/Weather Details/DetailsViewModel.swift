@@ -65,7 +65,12 @@ class DetailsViewModel {
     }
     
     func update(weatherInfo: WeatherInfo?, error: NSError?) {
-        self.errorInfo = error?.localizedDescription
+        if error != nil {
+            self.errorInfo = NSLocalizedString("Sorry, We could not fetch data!. Please, try again.", comment: "")
+#if DEBUG
+            print("fetching weather info error \(error?.localizedDescription ?? "nil")")
+#endif
+        }
         
         guard let weatherInfo else {
             self.weather = nil

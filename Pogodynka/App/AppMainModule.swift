@@ -13,4 +13,9 @@ struct AppMainModule {
         let service = WeatherService()
         return WeatherRepository(service: service)
     }
+    
+    static func injectSearchHistoryStorage() -> SearchHistoryStorage {
+        let storage = UserDefaultsStorage()
+        return SearchHistoryStorage(storage: storage, maxCount: 5)
+    }
 }

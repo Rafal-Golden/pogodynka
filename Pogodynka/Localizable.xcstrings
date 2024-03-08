@@ -69,6 +69,22 @@
         }
       }
     },
+    "Sorry, We could not fetch data!. Please, try again." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sorry, We could not fetch data!. Please, try again."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przepraszamy, nie mogliśmy pobrać danych dla ciebie. Proszę, spróbuj ponownie."
+          }
+        }
+      }
+    },
     "Weather now, at hour " : {
       "extractionState" : "manual",
       "localizations" : {

@@ -37,8 +37,8 @@ class DetailsViewController: UIViewController {
             self?.updateWeather(newWeather)
         }.store(in: &bucket)
         
-        detailsModel.$errorInfo.sink { errorInfo in
-            
+        detailsModel.$errorInfo.sink { [weak self] errorInfo in
+            self?.weatherLabel.text = errorInfo
         }.store(in: &bucket)
         
         detailsModel.$iconImage.sink { [weak self] iconImage in
@@ -65,6 +65,8 @@ class DetailsViewController: UIViewController {
         weatherImageView.layer.cornerRadius = 10
         weatherImageView.clipsToBounds = true
         nameLabel.backgroundColor = weatherImageView.backgroundColor
+        nameLabel.layer.cornerRadius = 8
+        nameLabel.clipsToBounds = true
     }
         
     private func setupLabels() {
@@ -77,6 +79,9 @@ class DetailsViewController: UIViewController {
         temperatureLabel.font = .systemFont(ofSize: 40.0)
         weatherImageView.translatesAutoresizingMaskIntoConstraints = false
         weatherImageView.backgroundColor = .clear
+        
+        weatherLabel.numberOfLines = 0
+        weatherLabel.lineBreakMode = .byWordWrapping
     }
     
     private func setupUI() {
@@ -94,7 +99,7 @@ class DetailsViewController: UIViewController {
         let constraints = [
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             weatherImageView.widthAnchor.constraint(equalToConstant: 60.0),
             weatherImageView.heightAnchor.constraint(equalToConstant: 60.0),
         ]
