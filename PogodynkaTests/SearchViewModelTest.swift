@@ -14,12 +14,15 @@ final class SearchViewModelTest: XCTestCase {
     var sut: SearchViewModel!
     var serviceMock: WeatherServiceMock!
     var repository: WeatherRepository!
+    var storageMock: UserDefaultsStorageMock!
 
     override func setUp() {
         super.setUp()
+        storageMock = UserDefaultsStorageMock()
+        let searchHistory = SearchHistoryStorage(storage: storageMock, maxCount: 3)
         serviceMock = WeatherServiceMock()
         repository = WeatherRepository(service: serviceMock)
-        sut = SearchViewModel(weatherRepository: repository)
+        sut = SearchViewModel(weatherRepository: repository, searchHistory: searchHistory)
     }
 
     override func tearDown() {
@@ -27,6 +30,7 @@ final class SearchViewModelTest: XCTestCase {
         sut = nil
         repository = nil
         serviceMock = nil
+        storageMock = nil
     }
 
     func test_init_returnsEmptyCities() {

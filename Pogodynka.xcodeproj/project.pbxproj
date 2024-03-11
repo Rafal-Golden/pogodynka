@@ -46,6 +46,7 @@
 		9975E26D2B9B6A1500FED600 /* IconImageDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E26C2B9B6A1500FED600 /* IconImageDownloaderTests.swift */; };
 		9975E26F2B9B851100FED600 /* SearchHistoryStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E26E2B9B851100FED600 /* SearchHistoryStorageTests.swift */; };
 		9975E2712B9B8C5E00FED600 /* SearchHistoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2702B9B8C5E00FED600 /* SearchHistoryStorage.swift */; };
+		9975E2732B9EF3E900FED600 /* UserDefaultsStorageMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2722B9EF3E900FED600 /* UserDefaultsStorageMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		9975E26C2B9B6A1500FED600 /* IconImageDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImageDownloaderTests.swift; sourceTree = "<group>"; };
 		9975E26E2B9B851100FED600 /* SearchHistoryStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryStorageTests.swift; sourceTree = "<group>"; };
 		9975E2702B9B8C5E00FED600 /* SearchHistoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryStorage.swift; sourceTree = "<group>"; };
+		9975E2722B9EF3E900FED600 /* UserDefaultsStorageMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorageMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				9975E25C2B9A316B00FED600 /* DetailsViewModelTests.swift */,
 				9975E26C2B9B6A1500FED600 /* IconImageDownloaderTests.swift */,
 				9975E26E2B9B851100FED600 /* SearchHistoryStorageTests.swift */,
+				9975E2722B9EF3E900FED600 /* UserDefaultsStorageMock.swift */,
 				9975E2542B9A078300FED600 /* SearchViewModelSpy.swift */,
 				9975E2602B9A3F6000FED600 /* DetailsViewModelSpy.swift */,
 				9975E2592B9A29C500FED600 /* CoreTests */,
@@ -451,6 +454,7 @@
 				9975E2552B9A078300FED600 /* SearchViewModelSpy.swift in Sources */,
 				9975E2612B9A3F6000FED600 /* DetailsViewModelSpy.swift in Sources */,
 				9975E1FE2B9739FF00FED600 /* AppCoordinatorTests.swift in Sources */,
+				9975E2732B9EF3E900FED600 /* UserDefaultsStorageMock.swift in Sources */,
 				9975E26D2B9B6A1500FED600 /* IconImageDownloaderTests.swift in Sources */,
 				9975E2462B98969200FED600 /* CoreTests.swift in Sources */,
 				9975E26F2B9B851100FED600 /* SearchHistoryStorageTests.swift in Sources */,
