@@ -30,6 +30,8 @@ final class DetailsViewModelTests: XCTestCase {
         sut = nil
         serviceMock = nil
     }
+    
+    // MARK: - TESTS -
 
     func test_fetchWeatherFails_returnsErrorInfo() {
         let detailsSpy = DetailsViewModelSpy(model: sut)
@@ -43,7 +45,7 @@ final class DetailsViewModelTests: XCTestCase {
         expect(detailsSpy.weather).to(beNil())
     }
     
-    func test_fetchWeatherFails_returnsWeather() {
+    func test_fetchWeatherSuccess_returnsWeather() {
         let weatherInfo = CoreTests.WeatherInfos.wroclawSunny
         serviceMock.weatherResult = .success(weatherInfo)
         let detailsSpy = DetailsViewModelSpy(model: sut)

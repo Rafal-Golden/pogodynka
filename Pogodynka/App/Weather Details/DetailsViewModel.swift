@@ -25,7 +25,7 @@ class DetailsViewModel {
     private var repository: WeatherRepositoryProtocol
     var iconImageDownloader: IconImageDownloader?
     
-    var lat: Double, lon: Double
+    var mapPoint: MapPoint
     var name: String
     var bgColor: UIColor
     var textColor: UIColor
@@ -35,9 +35,8 @@ class DetailsViewModel {
     @Published var iconImage: UIImage?
     
     init(lat: Double, lon: Double, name: String, repository: WeatherRepositoryProtocol) {
-        self.lat = lat
-        self.lon = lon
         self.name = name
+        self.mapPoint = MapPoint(lat: lat, lon: lon)
         self.bgColor = AppColors.background
         self.textColor = AppColors.body
         self.repository = repository
@@ -46,7 +45,7 @@ class DetailsViewModel {
     }
     
     func fetchWeather() {
-        repository.getWeatherInfo(lat: lat, lon: lon) { [weak self] result in
+        repository.getWeatherInfo(lat: mapPoint.lat, lon: mapPoint.lon) { [weak self] result in
             switch result {
                 case .success(let weatherInfo):
                     self?.update(weatherInfo: weatherInfo, error: nil)
@@ -70,6 +69,8 @@ class DetailsViewModel {
 #if DEBUG
             print("fetching weather info error \(error?.localizedDescription ?? "nil")")
 #endif
+        } else {
+            self.errorInfo = nil
         }
         
         guard let weatherInfo else {

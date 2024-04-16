@@ -29,6 +29,8 @@ final class IconImageDownloaderTests: XCTestCase {
         downloadDataTaskMock = nil
     }
     
+    // MARK: - TESTS -
+    
     func test_downloadImageFails_returnsNil() {
         var returnedImage: UIImage? = UIImage()
         var comletionCalled = false

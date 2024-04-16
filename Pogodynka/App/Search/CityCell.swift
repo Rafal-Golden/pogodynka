@@ -18,7 +18,7 @@ class CityCell: UITableViewCell {
     func configure(model: CityModel?) {
         guard let model else { return }
         
-        textLabel?.text = model.name + String(format: " (%0.3f, %0.3f)", model.lat, model.lon)
+        textLabel?.text = model.description
         accessoryType = .disclosureIndicator
     }
 }

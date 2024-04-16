@@ -26,6 +26,8 @@ final class WeatherRepositoryTest: XCTestCase {
         sut = nil
         serviceMock = nil
     }
+    
+    // MARK: - TESTS -
 
     func test_getLocationsFailure_returnsError() {
         let expectedError = CoreTests.NSErrors.generalError

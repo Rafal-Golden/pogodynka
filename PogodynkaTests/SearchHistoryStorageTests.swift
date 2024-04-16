@@ -25,6 +25,8 @@ final class SearchHistoryStorageTests: XCTestCase {
         sut = nil
         storageMock = nil
     }
+    
+    // MARK: - TESTS -
  
     func test_initStateLoadLast_isEmpty() {
         let last = self.sut.loadLast()

@@ -11,6 +11,11 @@ import Combine
 struct CityModel: Equatable {
     let name: String
     let lat, lon: Double
+    let state: String?
+    var description: String {
+        let details = state != nil ? "\(state ?? "nil")" : String(format: " (%0.3f, %0.3f)", lat, lon)
+        return "\(name) - \(details)"
+    }
 }
 
 class SearchViewModel {
@@ -63,7 +68,7 @@ class SearchViewModel {
             switch result {
                 case .success(let locations):
                     let newCities = locations.map {
-                        CityModel(name: $0.name, lat: $0.lat, lon: $0.lon)
+                        CityModel(name: $0.name, lat: $0.lat, lon: $0.lon, state: $0.state)
                     }
                     self?.cities = newCities
                     

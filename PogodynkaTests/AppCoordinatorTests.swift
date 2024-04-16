@@ -25,6 +25,8 @@ final class AppCoordinatorTests: XCTestCase {
         sut = nil
         window = nil
     }
+    
+    // MARK: - TESTS -
 
     func test_afterInit_containsViewController() {
         sut.start()

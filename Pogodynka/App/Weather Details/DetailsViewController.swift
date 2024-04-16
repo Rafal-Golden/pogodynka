@@ -105,6 +105,8 @@ class DetailsViewController: UIViewController {
         ]
         
         NSLayoutConstraint.activate(constraints)
+        
+        addMapView(mapPoint: detailsModel.mapPoint, topAnchor: stackView.bottomAnchor)
     }
     
     private func createHStackView(views: [UIView]) -> UIStackView {

@@ -32,6 +32,8 @@ final class SearchViewModelTest: XCTestCase {
         serviceMock = nil
         storageMock = nil
     }
+    
+    // MARK: - TESTS -
 
     func test_init_returnsEmptyCities() {
         expect(self.sut.citiesCount).to(equal(0))
