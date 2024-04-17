@@ -50,6 +50,11 @@
 		99FE71DC2BCEC78F004C638A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FE71DB2BCEC78F004C638A /* MapKit.framework */; };
 		99FE71DE2BCEC7B5004C638A /* DetailsViewController+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE71DD2BCEC7B5004C638A /* DetailsViewController+MapKit.swift */; };
 		99FE71E02BCECADA004C638A /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE71DF2BCECADA004C638A /* MapPoint.swift */; };
+		99FE71E22BCFC19E004C638A /* PolishStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE71E12BCFC19E004C638A /* PolishStates.swift */; };
+		99FE71E42BCFC25F004C638A /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE71E32BCFC25F004C638A /* CityModel.swift */; };
+		99FE71E62BCFD284004C638A /* PolishStatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE71E52BCFD284004C638A /* PolishStatesTests.swift */; };
+		99FE71E92BCFD632004C638A /* Contain+Nimble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE71E82BCFD632004C638A /* Contain+Nimble.swift */; };
+		99FE71EB2BCFDBAB004C638A /* NimbleContainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE71EA2BCFDBAB004C638A /* NimbleContainTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +119,11 @@
 		99FE71DB2BCEC78F004C638A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		99FE71DD2BCEC7B5004C638A /* DetailsViewController+MapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsViewController+MapKit.swift"; sourceTree = "<group>"; };
 		99FE71DF2BCECADA004C638A /* MapPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
+		99FE71E12BCFC19E004C638A /* PolishStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolishStates.swift; sourceTree = "<group>"; };
+		99FE71E32BCFC25F004C638A /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		99FE71E52BCFD284004C638A /* PolishStatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolishStatesTests.swift; sourceTree = "<group>"; };
+		99FE71E82BCFD632004C638A /* Contain+Nimble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contain+Nimble.swift"; sourceTree = "<group>"; };
+		99FE71EA2BCFDBAB004C638A /* NimbleContainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleContainTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +199,8 @@
 				9975E25C2B9A316B00FED600 /* DetailsViewModelTests.swift */,
 				9975E26C2B9B6A1500FED600 /* IconImageDownloaderTests.swift */,
 				9975E26E2B9B851100FED600 /* SearchHistoryStorageTests.swift */,
+				99FE71E52BCFD284004C638A /* PolishStatesTests.swift */,
+				99FE71E72BCFD612004C638A /* Nimble */,
 				9975E2742BA0526400FED600 /* Mocks */,
 				9975E2592B9A29C500FED600 /* CoreTests */,
 			);
@@ -216,6 +228,8 @@
 				9975E2662B9B17C000FED600 /* NoResultLabel.swift */,
 				9975E2472B98BE1400FED600 /* CityCell.swift */,
 				9975E2222B97732800FED600 /* SearchViewModel.swift */,
+				99FE71E32BCFC25F004C638A /* CityModel.swift */,
+				99FE71E12BCFC19E004C638A /* PolishStates.swift */,
 				9975E2702B9B8C5E00FED600 /* SearchHistoryStorage.swift */,
 			);
 			path = Search;
@@ -296,6 +310,15 @@
 				9975E2602B9A3F6000FED600 /* DetailsViewModelSpy.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		99FE71E72BCFD612004C638A /* Nimble */ = {
+			isa = PBXGroup;
+			children = (
+				99FE71E82BCFD632004C638A /* Contain+Nimble.swift */,
+				99FE71EA2BCFDBAB004C638A /* NimbleContainTests.swift */,
+			);
+			path = Nimble;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -450,12 +473,14 @@
 				9975E22C2B98648600FED600 /* LocationInfo.swift in Sources */,
 				9975E2422B9891EA00FED600 /* AppMainModule.swift in Sources */,
 				9975E2572B9A1B5200FED600 /* WeatherInfo.swift in Sources */,
+				99FE71E42BCFC25F004C638A /* CityModel.swift in Sources */,
 				9975E2172B97406A00FED600 /* Coordinator.swift in Sources */,
 				9975E2442B98927800FED600 /* WeatherRepository.swift in Sources */,
 				9975E21F2B97714B00FED600 /* SearchCoordinator.swift in Sources */,
 				9975E21A2B97417A00FED600 /* AppCoordinator.swift in Sources */,
 				99FE71DE2BCEC7B5004C638A /* DetailsViewController+MapKit.swift in Sources */,
 				9975E1E72B9739FB00FED600 /* AppDelegate.swift in Sources */,
+				99FE71E22BCFC19E004C638A /* PolishStates.swift in Sources */,
 				9975E2672B9B17C000FED600 /* NoResultLabel.swift in Sources */,
 				9975E26B2B9B5DE100FED600 /* IconImageDownloader.swift in Sources */,
 				9975E2712B9B8C5E00FED600 /* SearchHistoryStorage.swift in Sources */,
@@ -470,6 +495,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99FE71E62BCFD284004C638A /* PolishStatesTests.swift in Sources */,
+				99FE71EB2BCFDBAB004C638A /* NimbleContainTests.swift in Sources */,
 				9975E2252B97C3AF00FED600 /* SearchViewModelTest.swift in Sources */,
 				9975E2552B9A078300FED600 /* SearchViewModelSpy.swift in Sources */,
 				9975E2612B9A3F6000FED600 /* DetailsViewModelSpy.swift in Sources */,
@@ -478,6 +505,7 @@
 				9975E26D2B9B6A1500FED600 /* IconImageDownloaderTests.swift in Sources */,
 				9975E2462B98969200FED600 /* CoreTests.swift in Sources */,
 				9975E26F2B9B851100FED600 /* SearchHistoryStorageTests.swift in Sources */,
+				99FE71E92BCFD632004C638A /* Contain+Nimble.swift in Sources */,
 				9975E25D2B9A316B00FED600 /* DetailsViewModelTests.swift in Sources */,
 				9975E22E2B986A2600FED600 /* WeatherRepositoryTests.swift in Sources */,
 				9975E24C2B98DDE000FED600 /* WeatherServiceMock.swift in Sources */,
