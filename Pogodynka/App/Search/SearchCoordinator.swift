@@ -34,10 +34,12 @@ class SearchCoordinator: Coordinator {
     }
     
     func build() -> UIViewController {
-        let searchViewController = SearchViewController()
         let repository = AppMainModule.injectWeatherRepository()
         let searchHistory = AppMainModule.injectSearchHistoryStorage()
-        searchViewController.model = SearchViewModel(weatherRepository: repository, searchHistory: searchHistory)
+        let isPL = Bundle.main.preferredLocalizations.first?.contains("pl") == true
+        
+        let searchViewController = SearchViewController()
+        searchViewController.model = SearchViewModel(weatherRepository: repository, searchHistory: searchHistory, isPL: isPL)
         searchViewController.goToWeatherDetails = { [weak self] cityModel in
             self?.navigate(.weatherDetails(city: cityModel))
         }

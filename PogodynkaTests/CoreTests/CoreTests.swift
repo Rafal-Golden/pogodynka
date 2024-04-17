@@ -22,8 +22,8 @@ struct CoreTests {
     }
     
     struct CityModels {
-        static let wroclaw = CityModel(name: "Wrocław", lat: 50.96, lon: 16.96, state: "Dolnośląskie")
-        static let dabrowa = CityModel(name: "Dąbrowa", lat: 53.40802735, lon: 20.2072225551886, state: "Warmińsko Mazurskie")
+        static let wroclaw = CityModel(name: "Wrocław", lat: 50.96, lon: 16.96, state: "Dolnośląskie", isPL: true)
+        static let dabrowa = CityModel(name: "Dąbrowa", lat: 53.40802735, lon: 20.2072225551886, state: "Warmińsko Mazurskie", isPL: true)
     }
     
     struct WeatherInfos {

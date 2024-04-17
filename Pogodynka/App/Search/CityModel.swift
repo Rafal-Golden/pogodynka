@@ -11,11 +11,13 @@ struct CityModel: Equatable {
     let name: String
     let lat, lon: Double
     let state: String?
+    let isPL: Bool
     var details: String {
-        guard let statePL else {
+        let baseState = isPL ? statePL : state
+        guard let baseState else {
             return String(format: " (%0.3f, %0.3f)", lat, lon)
         }
-        return statePL
+        return baseState
     }
 }
 

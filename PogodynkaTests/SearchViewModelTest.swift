@@ -22,7 +22,7 @@ final class SearchViewModelTest: XCTestCase {
         let searchHistory = SearchHistoryStorage(storage: storageMock, maxCount: 3)
         serviceMock = WeatherServiceMock()
         repository = WeatherRepository(service: serviceMock)
-        sut = SearchViewModel(weatherRepository: repository, searchHistory: searchHistory)
+        sut = SearchViewModel(weatherRepository: repository, searchHistory: searchHistory, isPL: true)
     }
 
     override func tearDown() {

@@ -29,6 +29,7 @@ class SearchViewModel {
     
     private var weatherRepository: WeatherRepositoryProtocol
     private var searchHistoryStorage: SearchHistoryStorage
+    private var isPL: Bool
     
     var matchRegExp: String
     var bgColor: UIColor
@@ -39,13 +40,14 @@ class SearchViewModel {
         return searchHistoryStorage.loadLast()
     }
     
-    init(weatherRepository: WeatherRepositoryProtocol, searchHistory: SearchHistoryStorage) {
+    init(weatherRepository: WeatherRepositoryProtocol, searchHistory: SearchHistoryStorage, isPL: Bool) {
         matchRegExp = "^([a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+(?: )?)+$"
         bgColor = AppColors.background
         title = NSLocalizedString("Search your city", comment: "")
         noResultsMessage = NSLocalizedString("No results, try typing further.", comment: "")
         self.weatherRepository = weatherRepository
         self.searchHistoryStorage = searchHistory
+        self.isPL = isPL
     }
     
     func searchCities(with searchPhrase: String) {
@@ -55,17 +57,22 @@ class SearchViewModel {
         }
             
         weatherRepository.getLocationInfos(query: searchPhrase) { [weak self] result in
+            guard let self else { return }
             switch result {
                 case .success(let locations):
-                    let newCities = locations.map {
-                        CityModel(name: $0.name, lat: $0.lat, lon: $0.lon, state: $0.state)
-                    }
-                    self?.cities = newCities
+                    self.cities = self.cities(from: locations)
                     
                 case .failure(_):
-                    self?.cities = []
+                    self.cities = []
             }
         }
+    }
+    
+    private func cities(from locations: [LocationInfo]) -> [CityModel] {
+        let newCities = locations.map {
+            CityModel(name: $0.name, lat: $0.lat, lon: $0.lon, state: $0.state, isPL: isPL)
+        }
+        return newCities
     }
     
     func city(at indexPath: IndexPath) -> CityModel? {

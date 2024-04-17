@@ -65,6 +65,7 @@ class WeatherService: WeatherServiceProtocol {
 
 extension WeatherService {
     convenience init() {
-        self.init(requestService: APIRequestService(), language: "PL")
+        let appLanguage = Bundle.main.preferredLocalizations.first ?? "PL"
+        self.init(requestService: APIRequestService(), language: appLanguage)
     }
 }
