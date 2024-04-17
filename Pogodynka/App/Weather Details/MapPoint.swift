@@ -26,7 +26,7 @@ extension MapPoint {
         let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
-        let region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+        let region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         self.init(lat: lat, lon: lon, annotation: annotation, region: region)
     }
 }
