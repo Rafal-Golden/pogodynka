@@ -29,6 +29,9 @@ struct CoreTests {
     struct WeatherInfos {
         static let wroclawSunny: WeatherInfo = decodeObject(fileName: "weather_info")
     }
+    struct ForecastInfos {
+        static let wroclawForecast: ForecastInfo = decodeObject(fileName: "forecast_info")
+    }
 }
 
 extension CoreTests {

@@ -10,6 +10,7 @@ import Foundation
 protocol WeatherServiceProtocol {
     func requestDirectLocations(query: String, limit: Int, completion: @escaping (Result<[LocationInfo], NSError>) -> Void)
     func requestWeather(lat: Double, lon: Double, completion: @escaping (Result<WeatherInfo, NSError>) -> Void)
+    func requestForecast(location: Location, completion: @escaping (Result<ForecastInfo, NSError>) -> Void)
 }
 
 class WeatherService: WeatherServiceProtocol {
@@ -45,6 +46,17 @@ class WeatherService: WeatherServiceProtocol {
         let queryItems = basicQueryItems(with: [
             URLQueryItem(name: "lat", value: "\(lat)"),
             URLQueryItem(name: "lon", value: "\(lon)"),
+            URLQueryItem(name: "units", value: "metric"),
+        ])
+        let request = requestService.request(method: "GET", path: path, queryItems: queryItems)
+        _ = requestService.runJson(request: request, completionQueue: .main, completion: completion)
+    }
+    
+    func requestForecast(location: Location, completion: @escaping (Result<ForecastInfo, NSError>) -> Void) {
+        let path = "https://api.openweathermap.org/data/2.5/forecast"
+        let queryItems = basicQueryItems(with: [
+            URLQueryItem(name: "lat", value: "\(location.lat)"),
+            URLQueryItem(name: "lon", value: "\(location.lon)"),
             URLQueryItem(name: "units", value: "metric"),
         ])
         let request = requestService.request(method: "GET", path: path, queryItems: queryItems)

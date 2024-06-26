@@ -54,7 +54,6 @@ final class PolishStatesTests: XCTestCase {
         
         expect(translatedState).to(beEmpty())
         expect(translatedState).toNot(contain(" "))
-        
     }
     
     func test_TranslateUnknownState_returns_unknownName() throws {

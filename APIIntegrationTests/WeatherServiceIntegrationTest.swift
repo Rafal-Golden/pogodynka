@@ -43,4 +43,16 @@ final class WeatherServiceIntegrationTest: XCTestCase {
         }
         expect(weatherInfo).toEventuallyNot(beNil(), timeout: .seconds(3))
     }
+    
+    func test_getForecast_returnsData() {
+        
+        var forecastInfo: ForecastInfo?
+        
+        let wroclaw = CoreTests.LocationInfos.wroclaw
+        let wroclawLoc = Location(lat: wroclaw.lat, lon: wroclaw.lon)
+        sut.requestForecast(location: wroclawLoc) { result in
+            forecastInfo = try? result.get()
+        }
+        expect(forecastInfo).toEventuallyNot(beNil(), timeout: .seconds(3))
+    }
 }

@@ -10,6 +10,7 @@ import Foundation
 protocol WeatherRepositoryProtocol {
     func getLocationInfos(query: String, comletion: @escaping (Result<[LocationInfo], NSError>) -> Void)
     func getWeatherInfo(lat: Double, lon: Double, completion: @escaping (Result<WeatherInfo, NSError>) -> Void)
+    func getForecastInfo(location: Location, completion: @escaping (Result<ForecastInfo, NSError>) -> Void)
 }
 
 class WeatherRepository: WeatherRepositoryProtocol {
@@ -26,5 +27,9 @@ class WeatherRepository: WeatherRepositoryProtocol {
     
     func getWeatherInfo(lat: Double, lon: Double, completion: @escaping (Result<WeatherInfo, NSError>) -> Void) {
         service.requestWeather(lat: lat, lon: lon, completion: completion)
+    }
+    
+    func getForecastInfo(location: Location, completion: @escaping (Result<ForecastInfo, NSError>) -> Void) {
+        service.requestForecast(location: location, completion: completion)
     }
 }

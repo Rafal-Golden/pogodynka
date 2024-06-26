@@ -25,4 +25,12 @@ class WeatherServiceMock: WeatherServiceProtocol {
         requestWeatherCalled = true
         completion(weatherResult)
     }
+    
+    var forecastResult: Result<Pogodynka.ForecastInfo, NSError> = .failure(CoreTests.NSErrors.unknown)
+    private(set) var requestForecastCalled = false
+    
+    func requestForecast(location: Pogodynka.Location, completion: @escaping (Result<Pogodynka.ForecastInfo, NSError>) -> Void) {
+        requestForecastCalled = true
+        completion(forecastResult)
+    }
 }

@@ -118,4 +118,49 @@ final class WeatherRepositoryTest: XCTestCase {
         expect(returnedWeatherInfo).to(equal(expectedWeatherInfo))
         expect(returnedWeatherInfo?.name).to(equal(wroclaw.name))
     }
+    
+    func test_getForecastInfo_returnsError() {
+        let expectedError = CoreTests.NSErrors.generalError
+        serviceMock.forecastResult = .failure(expectedError)
+        let wroclawLoc = CoreTests.LocationInfos.wroclaw.location
+        var completionCalled: Bool = false
+        var returnedError: NSError?
+        
+        sut.getForecastInfo(location: wroclawLoc) { result in
+            switch result {
+                case .failure(let error):
+                    completionCalled = true
+                    returnedError = error
+                case .success(_):
+                    break
+            }
+        }
+        
+        expect(self.serviceMock.requestForecastCalled).to(beTrue())
+        expect(completionCalled).to(beTrue())
+        expect(returnedError).to(equal(expectedError))
+    }
+    
+    func test_getForecastInfo_returnsForecastInfo() {
+        let expectedForecastInfo = CoreTests.ForecastInfos.wroclawForecast
+        serviceMock.forecastResult = .success(expectedForecastInfo)
+        var completionCalled: Bool = false
+        let wroclawLoc = CoreTests.LocationInfos.wroclaw.location
+        var returnedForecastInfo: ForecastInfo?
+        
+        sut.getForecastInfo(location: wroclawLoc) { result in
+            switch result {
+                case .success(let forecast):
+                    completionCalled = true
+                    returnedForecastInfo = forecast
+                case .failure(_):
+                    break
+            }
+        }
+        
+        expect(self.serviceMock.requestForecastCalled).to(beTrue())
+        expect(completionCalled).to(beTrue())
+        expect(returnedForecastInfo).toNot(beNil())
+        expect(returnedForecastInfo).to(equal(expectedForecastInfo))
+    }
 }

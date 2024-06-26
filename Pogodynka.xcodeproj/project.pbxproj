@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		995EAF062C172E180002BA46 /* forecast_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 995EAF052C172E180002BA46 /* forecast_info.json */; };
 		9975E1E72B9739FB00FED600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E1E62B9739FB00FED600 /* AppDelegate.swift */; };
 		9975E1E92B9739FC00FED600 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E1E82B9739FC00FED600 /* SceneDelegate.swift */; };
 		9975E1F02B9739FF00FED600 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9975E1EF2B9739FF00FED600 /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		99FE71E62BCFD284004C638A /* PolishStatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE71E52BCFD284004C638A /* PolishStatesTests.swift */; };
 		99FE71E92BCFD632004C638A /* Contain+Nimble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE71E82BCFD632004C638A /* Contain+Nimble.swift */; };
 		99FE71EB2BCFDBAB004C638A /* NimbleContainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE71EA2BCFDBAB004C638A /* NimbleContainTests.swift */; };
+		99FE71ED2BEE6A50004C638A /* ForecastInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE71EC2BEE6A50004C638A /* ForecastInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		995EAF052C172E180002BA46 /* forecast_info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forecast_info.json; sourceTree = "<group>"; };
 		9975E1E32B9739FB00FED600 /* Pogodynka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pogodynka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9975E1E62B9739FB00FED600 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9975E1E82B9739FC00FED600 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +127,7 @@
 		99FE71E52BCFD284004C638A /* PolishStatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolishStatesTests.swift; sourceTree = "<group>"; };
 		99FE71E82BCFD632004C638A /* Contain+Nimble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contain+Nimble.swift"; sourceTree = "<group>"; };
 		99FE71EA2BCFDBAB004C638A /* NimbleContainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleContainTests.swift; sourceTree = "<group>"; };
+		99FE71EC2BEE6A50004C638A /* ForecastInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +253,7 @@
 			children = (
 				9975E22B2B98648600FED600 /* LocationInfo.swift */,
 				9975E2562B9A1B5200FED600 /* WeatherInfo.swift */,
+				99FE71EC2BEE6A50004C638A /* ForecastInfo.swift */,
 				9975E2432B98927800FED600 /* WeatherRepository.swift */,
 				9975E2292B98636500FED600 /* WeatherService.swift */,
 				9975E26A2B9B5DE100FED600 /* IconImageDownloader.swift */,
@@ -289,6 +294,7 @@
 			children = (
 				9975E2452B98969200FED600 /* CoreTests.swift */,
 				9975E25A2B9A2A9100FED600 /* weather_info.json */,
+				995EAF052C172E180002BA46 /* forecast_info.json */,
 			);
 			path = CoreTests;
 			sourceTree = "<group>";
@@ -445,6 +451,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				995EAF062C172E180002BA46 /* forecast_info.json in Resources */,
 				9975E25B2B9A2A9100FED600 /* weather_info.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +472,7 @@
 			files = (
 				99FE71E02BCECADA004C638A /* MapPoint.swift in Sources */,
 				9975E22A2B98636500FED600 /* WeatherService.swift in Sources */,
+				99FE71ED2BEE6A50004C638A /* ForecastInfo.swift in Sources */,
 				9975E2212B9772C700FED600 /* SearchViewController.swift in Sources */,
 				9975E2232B97732800FED600 /* SearchViewModel.swift in Sources */,
 				9975E2642B9B099300FED600 /* UIColor+intValue.swift in Sources */,
