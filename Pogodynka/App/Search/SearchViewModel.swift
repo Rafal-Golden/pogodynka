@@ -40,6 +40,8 @@ class SearchViewModel {
         return searchHistoryStorage.loadLast()
     }
     
+    var countryRegion: CountryRegion?
+    
     init(weatherRepository: WeatherRepositoryProtocol, searchHistory: SearchHistoryStorage, isPL: Bool) {
         matchRegExp = "^([a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+(?: )?)+$"
         bgColor = AppColors.background

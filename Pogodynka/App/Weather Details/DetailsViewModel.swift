@@ -36,7 +36,7 @@ class DetailsViewModel {
     
     init(lat: Double, lon: Double, name: String, repository: WeatherRepositoryProtocol) {
         self.name = name
-        self.mapPoint = MapPoint(lat: lat, lon: lon)
+        self.mapPoint = MapPoint(lat: lat, lon: lon, title: name)
         self.bgColor = AppColors.background
         self.textColor = AppColors.body
         self.repository = repository

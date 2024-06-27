@@ -22,10 +22,11 @@ struct MapPoint {
 
 extension MapPoint {
     
-    init(lat: Double, lon: Double) {
+    init(lat: Double, lon: Double, title: String?=nil) {
         let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
+        annotation.title = title
         let region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         self.init(lat: lat, lon: lon, annotation: annotation, region: region)
     }

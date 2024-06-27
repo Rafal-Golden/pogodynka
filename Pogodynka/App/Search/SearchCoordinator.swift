@@ -40,6 +40,7 @@ class SearchCoordinator: Coordinator {
         
         let searchViewController = SearchViewController()
         searchViewController.model = SearchViewModel(weatherRepository: repository, searchHistory: searchHistory, isPL: isPL)
+        searchViewController.model.countryRegion = CountryRegion()
         searchViewController.goToWeatherDetails = { [weak self] cityModel in
             self?.navigate(.weatherDetails(city: cityModel))
         }

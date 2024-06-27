@@ -21,6 +21,10 @@ class SearchViewController: UIViewController {
     private var bucket = Set<AnyCancellable>()
     private var searchTextPublisher = CurrentValueSubject<String, Never>("")
     
+    var topAnchor: NSLayoutYAxisAnchor {
+        return searchBar.bottomAnchor
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +43,7 @@ class SearchViewController: UIViewController {
     
     private func configureUI() {
         configureSearchBar()
+        addCountryMapView()
         configureTableView()
         configureLoadingView()
         configureNoResultsLabel()
