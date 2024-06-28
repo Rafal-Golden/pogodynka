@@ -11,6 +11,13 @@
 		995EAF442C2C1BC30002BA46 /* SearchViewController+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995EAF432C2C1BC30002BA46 /* SearchViewController+MapKit.swift */; };
 		995EAF4D2C2C1D040002BA46 /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995EAF4C2C2C1D040002BA46 /* SearchViewControllerTests.swift */; };
 		995EAF4F2C2C33990002BA46 /* CountryRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995EAF4E2C2C33990002BA46 /* CountryRegion.swift */; };
+		995EAF512C2D761D0002BA46 /* MapSearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995EAF502C2D761D0002BA46 /* MapSearchEngine.swift */; };
+		995EAF532C2D78280002BA46 /* MapSearchEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995EAF522C2D78280002BA46 /* MapSearchEngineTests.swift */; };
+		995EAF552C2D7C070002BA46 /* LocalSearchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995EAF542C2D7C070002BA46 /* LocalSearchProtocol.swift */; };
+		995EAF572C2D7E1B0002BA46 /* MapLocalSearchMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995EAF562C2D7E1B0002BA46 /* MapLocalSearchMock.swift */; };
+		995EAF592C2EC65A0002BA46 /* LocalSearchIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995EAF582C2EC65A0002BA46 /* LocalSearchIntegrationTests.swift */; };
+		995EAF5B2C2F1B380002BA46 /* MapViewDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995EAF5A2C2F1B380002BA46 /* MapViewDecoratorTests.swift */; };
+		995EAF5D2C2F1BB10002BA46 /* MapViewDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995EAF5C2C2F1BB10002BA46 /* MapViewDecorator.swift */; };
 		9975E1E72B9739FB00FED600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E1E62B9739FB00FED600 /* AppDelegate.swift */; };
 		9975E1E92B9739FC00FED600 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E1E82B9739FC00FED600 /* SceneDelegate.swift */; };
 		9975E1F02B9739FF00FED600 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9975E1EF2B9739FF00FED600 /* Assets.xcassets */; };
@@ -84,6 +91,13 @@
 		995EAF432C2C1BC30002BA46 /* SearchViewController+MapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+MapKit.swift"; sourceTree = "<group>"; };
 		995EAF4C2C2C1D040002BA46 /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewControllerTests.swift; path = PogodynkaTests/UI/SearchViewControllerTests.swift; sourceTree = SOURCE_ROOT; };
 		995EAF4E2C2C33990002BA46 /* CountryRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRegion.swift; sourceTree = "<group>"; };
+		995EAF502C2D761D0002BA46 /* MapSearchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchEngine.swift; sourceTree = "<group>"; };
+		995EAF522C2D78280002BA46 /* MapSearchEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchEngineTests.swift; sourceTree = "<group>"; };
+		995EAF542C2D7C070002BA46 /* LocalSearchProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchProtocol.swift; sourceTree = "<group>"; };
+		995EAF562C2D7E1B0002BA46 /* MapLocalSearchMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocalSearchMock.swift; sourceTree = "<group>"; };
+		995EAF582C2EC65A0002BA46 /* LocalSearchIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchIntegrationTests.swift; sourceTree = "<group>"; };
+		995EAF5A2C2F1B380002BA46 /* MapViewDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewDecoratorTests.swift; sourceTree = "<group>"; };
+		995EAF5C2C2F1BB10002BA46 /* MapViewDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewDecorator.swift; sourceTree = "<group>"; };
 		9975E1E32B9739FB00FED600 /* Pogodynka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pogodynka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9975E1E62B9739FB00FED600 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9975E1E82B9739FC00FED600 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,6 +233,9 @@
 				9975E26C2B9B6A1500FED600 /* IconImageDownloaderTests.swift */,
 				9975E26E2B9B851100FED600 /* SearchHistoryStorageTests.swift */,
 				99FE71E52BCFD284004C638A /* PolishStatesTests.swift */,
+				995EAF522C2D78280002BA46 /* MapSearchEngineTests.swift */,
+				995EAF5A2C2F1B380002BA46 /* MapViewDecoratorTests.swift */,
+				995EAF562C2D7E1B0002BA46 /* MapLocalSearchMock.swift */,
 				99FE71E72BCFD612004C638A /* Nimble */,
 				9975E2742BA0526400FED600 /* Mocks */,
 				9975E2592B9A29C500FED600 /* CoreTests */,
@@ -245,9 +262,12 @@
 				9975E21E2B97714B00FED600 /* SearchCoordinator.swift */,
 				9975E2202B9772C700FED600 /* SearchViewController.swift */,
 				995EAF432C2C1BC30002BA46 /* SearchViewController+MapKit.swift */,
+				9975E2222B97732800FED600 /* SearchViewModel.swift */,
+				995EAF5C2C2F1BB10002BA46 /* MapViewDecorator.swift */,
+				995EAF502C2D761D0002BA46 /* MapSearchEngine.swift */,
+				995EAF542C2D7C070002BA46 /* LocalSearchProtocol.swift */,
 				9975E2662B9B17C000FED600 /* NoResultLabel.swift */,
 				9975E2472B98BE1400FED600 /* CityCell.swift */,
-				9975E2222B97732800FED600 /* SearchViewModel.swift */,
 				995EAF4E2C2C33990002BA46 /* CountryRegion.swift */,
 				99FE71E32BCFC25F004C638A /* CityModel.swift */,
 				99FE71E12BCFC19E004C638A /* PolishStates.swift */,
@@ -282,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				9975E2372B9884B600FED600 /* WeatherServiceIntegrationTest.swift */,
+				995EAF582C2EC65A0002BA46 /* LocalSearchIntegrationTests.swift */,
 			);
 			path = APIIntegrationTests;
 			sourceTree = "<group>";
@@ -500,14 +521,17 @@
 				9975E2422B9891EA00FED600 /* AppMainModule.swift in Sources */,
 				9975E2572B9A1B5200FED600 /* WeatherInfo.swift in Sources */,
 				99FE71E42BCFC25F004C638A /* CityModel.swift in Sources */,
+				995EAF552C2D7C070002BA46 /* LocalSearchProtocol.swift in Sources */,
 				9975E2172B97406A00FED600 /* Coordinator.swift in Sources */,
 				9975E2442B98927800FED600 /* WeatherRepository.swift in Sources */,
+				995EAF5D2C2F1BB10002BA46 /* MapViewDecorator.swift in Sources */,
 				9975E21F2B97714B00FED600 /* SearchCoordinator.swift in Sources */,
 				9975E21A2B97417A00FED600 /* AppCoordinator.swift in Sources */,
 				99FE71DE2BCEC7B5004C638A /* DetailsViewController+MapKit.swift in Sources */,
 				9975E1E72B9739FB00FED600 /* AppDelegate.swift in Sources */,
 				99FE71E22BCFC19E004C638A /* PolishStates.swift in Sources */,
 				9975E2672B9B17C000FED600 /* NoResultLabel.swift in Sources */,
+				995EAF512C2D761D0002BA46 /* MapSearchEngine.swift in Sources */,
 				9975E26B2B9B5DE100FED600 /* IconImageDownloader.swift in Sources */,
 				995EAF4F2C2C33990002BA46 /* CountryRegion.swift in Sources */,
 				9975E2712B9B8C5E00FED600 /* SearchHistoryStorage.swift in Sources */,
@@ -524,15 +548,18 @@
 			files = (
 				99FE71E62BCFD284004C638A /* PolishStatesTests.swift in Sources */,
 				99FE71EB2BCFDBAB004C638A /* NimbleContainTests.swift in Sources */,
+				995EAF532C2D78280002BA46 /* MapSearchEngineTests.swift in Sources */,
 				9975E2252B97C3AF00FED600 /* SearchViewModelTest.swift in Sources */,
 				9975E2552B9A078300FED600 /* SearchViewModelSpy.swift in Sources */,
 				9975E2612B9A3F6000FED600 /* DetailsViewModelSpy.swift in Sources */,
 				9975E1FE2B9739FF00FED600 /* AppCoordinatorTests.swift in Sources */,
 				9975E2732B9EF3E900FED600 /* UserDefaultsStorageMock.swift in Sources */,
+				995EAF572C2D7E1B0002BA46 /* MapLocalSearchMock.swift in Sources */,
 				9975E26D2B9B6A1500FED600 /* IconImageDownloaderTests.swift in Sources */,
 				9975E2462B98969200FED600 /* CoreTests.swift in Sources */,
 				9975E26F2B9B851100FED600 /* SearchHistoryStorageTests.swift in Sources */,
 				99FE71E92BCFD632004C638A /* Contain+Nimble.swift in Sources */,
+				995EAF5B2C2F1B380002BA46 /* MapViewDecoratorTests.swift in Sources */,
 				995EAF4D2C2C1D040002BA46 /* SearchViewControllerTests.swift in Sources */,
 				9975E25D2B9A316B00FED600 /* DetailsViewModelTests.swift in Sources */,
 				9975E22E2B986A2600FED600 /* WeatherRepositoryTests.swift in Sources */,
@@ -545,6 +572,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9975E2582B9A21CB00FED600 /* CoreTests.swift in Sources */,
+				995EAF592C2EC65A0002BA46 /* LocalSearchIntegrationTests.swift in Sources */,
 				9975E2382B9884B600FED600 /* WeatherServiceIntegrationTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

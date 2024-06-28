@@ -15,6 +15,8 @@ final class SearchViewModelTest: XCTestCase {
     var serviceMock: WeatherServiceMock!
     var repository: WeatherRepository!
     var storageMock: UserDefaultsStorageMock!
+    
+    var localSearchMock: MapLocalSearchMock!
 
     override func setUp() {
         super.setUp()
@@ -23,6 +25,11 @@ final class SearchViewModelTest: XCTestCase {
         serviceMock = WeatherServiceMock()
         repository = WeatherRepository(service: serviceMock)
         sut = SearchViewModel(weatherRepository: repository, searchHistory: searchHistory, isPL: true)
+        
+        localSearchMock = MapLocalSearchMock()
+        sut.mapSearchEngine.localSearchFactory = { _ in
+            return self.localSearchMock
+        }
     }
 
     override func tearDown() {
@@ -31,6 +38,7 @@ final class SearchViewModelTest: XCTestCase {
         repository = nil
         serviceMock = nil
         storageMock = nil
+        localSearchMock = nil
     }
     
     // MARK: - TESTS -
@@ -126,5 +134,19 @@ final class SearchViewModelTest: XCTestCase {
         expect(returnedCity).toNot(beNil())
         expect(returnedCity).to(equal(expectedCity))
         expect(returnedCity?.name).to(equal(expectedCity.name))
+    }
+    
+    func test_SearchMarker_Returns_MarkedMapPoint() {
+        let testedCity = [CoreTests.LocationInfos.wroclaw]
+        serviceMock.directLocationsResult = .success(testedCity)
+        
+        let wroclaw = CoreTests.LocationInfos.wroclaw
+        localSearchMock.startResponse = localSearchMock.mockedResponse(locationInfo: wroclaw)
+        
+        sut.searchMarker(with: "Wroclaw")
+    
+        expect(self.sut.markedMapPoint).toNot(beNil())
+        expect(self.sut.markedMapPoint?.lat).to(equal(wroclaw.lat))
+        expect(self.sut.markedMapPoint?.lon).to(equal(wroclaw.lon))
     }
 }

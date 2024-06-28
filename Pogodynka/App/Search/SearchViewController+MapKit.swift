@@ -11,7 +11,7 @@ import MapKit
 extension SearchViewController: MKMapViewDelegate {
     
     private func updateRegion(mapView: MKMapView) {
-        if let countryRegion = model.countryRegion {
+        if let countryRegion = model.countryRegion, model.markedMapPoint == nil {
             mapView.setRegion(countryRegion.region, animated: false)
         }
     }
@@ -39,6 +39,8 @@ extension SearchViewController: MKMapViewDelegate {
         mapView.isPitchEnabled = false
         
         mapView.delegate = self
+        
+        self.mapViewDecorator = MapViewDecorator(mapView: mapView)
     }
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {

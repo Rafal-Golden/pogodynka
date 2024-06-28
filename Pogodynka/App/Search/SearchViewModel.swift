@@ -27,6 +27,9 @@ class SearchViewModel {
         }
     }
     
+    @Published var markedMapPoint: MapPoint?
+    private(set) var mapSearchEngine: MapSearchEngine = .init()
+    
     private var weatherRepository: WeatherRepositoryProtocol
     private var searchHistoryStorage: SearchHistoryStorage
     private var isPL: Bool
@@ -67,6 +70,17 @@ class SearchViewModel {
                 case .failure(_):
                     self.cities = []
             }
+        }
+    }
+    
+    func searchMarker(with searchPhrase: String) {
+        guard searchPhrase.count > 0 else {
+            markedMapPoint = nil
+            return
+        }
+        
+        mapSearchEngine.searchForCity(name: searchPhrase) { [weak self] result in
+            self?.markedMapPoint = try? result.get()
         }
     }
     

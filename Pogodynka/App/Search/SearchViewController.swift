@@ -18,6 +18,8 @@ class SearchViewController: UIViewController {
     private var loadingView: UIActivityIndicatorView!
     private var noResultsLabel: NoResultLabel!
     
+    var mapViewDecorator: MapViewDecorator?
+    
     private var bucket = Set<AnyCancellable>()
     private var searchTextPublisher = CurrentValueSubject<String, Never>("")
     
@@ -79,11 +81,20 @@ class SearchViewController: UIViewController {
             .sink { [weak self] updatedText in
                 self?.search(updatedText)
         }.store(in: &bucket)
+        
+        model.$markedMapPoint.sink { [weak self] mapPoint in
+            guard let mapPoint else {
+                self?.mapViewDecorator?.removeMapPoint()
+                return
+            }
+            self?.mapViewDecorator?.add(mapPoint: mapPoint)
+        }.store(in: &bucket)
     }
     
     private func search(_ typedText: String) {
         self.loadingView.startAnimating()
         self.model.searchCities(with: typedText)
+        self.model.searchMarker(with: typedText)
     }
     
     private func update() {
