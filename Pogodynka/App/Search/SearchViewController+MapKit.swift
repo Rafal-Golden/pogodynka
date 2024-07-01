@@ -17,7 +17,7 @@ extension SearchViewController: MKMapViewDelegate {
     }
     
     func addCountryMapView() {
-        addCountryMapView(topAnchor: topAnchor)
+        addCountryMapView(topAnchor: topMapAnchor)
     }
     
     private func addCountryMapView(topAnchor: NSLayoutYAxisAnchor) {
@@ -28,7 +28,7 @@ extension SearchViewController: MKMapViewDelegate {
         
         mapView.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
-            mapView.topAnchor.constraint(equalTo: topAnchor, constant: 200),
+            mapView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10)
@@ -37,11 +37,21 @@ extension SearchViewController: MKMapViewDelegate {
         
         mapView.isZoomEnabled = false
         mapView.isPitchEnabled = false
+        mapView.showsScale = true
+        mapView.showsUserLocation = true
         
         mapView.delegate = self
         
         self.mapViewDecorator = MapViewDecorator(mapView: mapView)
     }
+    
+    private func matchCityAndGoToDetails(location: Location) {
+        if let selectedCity = model.findCity(loc: location) {
+            goToWeatherDetails?(selectedCity)
+        }
+    }
+    
+    // MARK: - MapView Delegate
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         let currentRegionCenter = mapView.region.center
@@ -50,5 +60,11 @@ extension SearchViewController: MKMapViewDelegate {
                 updateRegion(mapView: mapView)
             }
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect annotation: MKAnnotation) {
+        let location = Location(lat: annotation.coordinate.latitude, lon: annotation.coordinate.longitude)
+        matchCityAndGoToDetails(location: location)
+        mapView.deselectAnnotation(annotation, animated: true)
     }
 }

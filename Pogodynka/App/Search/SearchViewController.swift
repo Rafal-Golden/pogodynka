@@ -23,8 +23,8 @@ class SearchViewController: UIViewController {
     private var bucket = Set<AnyCancellable>()
     private var searchTextPublisher = CurrentValueSubject<String, Never>("")
     
-    var topAnchor: NSLayoutYAxisAnchor {
-        return searchBar.bottomAnchor
+    var topMapAnchor: NSLayoutYAxisAnchor {
+        return view.centerYAnchor
     }
     
     override func viewDidLoad() {
@@ -83,10 +83,8 @@ class SearchViewController: UIViewController {
         }.store(in: &bucket)
         
         model.$markedMapPoint.sink { [weak self] mapPoint in
-            guard let mapPoint else {
-                self?.mapViewDecorator?.removeMapPoint()
-                return
-            }
+            self?.mapViewDecorator?.removeMapPoint()
+            guard let mapPoint else { return }
             self?.mapViewDecorator?.add(mapPoint: mapPoint)
         }.store(in: &bucket)
     }
@@ -178,7 +176,7 @@ extension SearchViewController: UITableViewDataSource {
             tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 10),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             view.trailingAnchor.constraint(equalTo: tableView.trailingAnchor, constant: 10),
-            view.bottomAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 10),
+            view.centerYAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 0),
         ]
         
         NSLayoutConstraint.activate(constraits)

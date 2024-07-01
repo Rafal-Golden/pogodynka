@@ -149,4 +149,27 @@ final class SearchViewModelTest: XCTestCase {
         expect(self.sut.markedMapPoint?.lat).to(equal(wroclaw.lat))
         expect(self.sut.markedMapPoint?.lon).to(equal(wroclaw.lon))
     }
+    
+    func test_findCity_returnsNil() {
+        let dabrowaLoc = CoreTests.LocationInfos.dabrowa.location
+        
+        let cityModel = sut.findCity(loc: dabrowaLoc)
+        
+        expect(cityModel).to(beNil())
+    }
+    
+    func test_findCity_returnsCity() {
+        let testedCity = [CoreTests.LocationInfos.dabrowa]
+        serviceMock.directLocationsResult = .success(testedCity)
+        
+        let dabrowa = CoreTests.LocationInfos.dabrowa
+        
+        sut.searchCities(with: dabrowa.name)
+        let cityModel = sut.findCity(loc: dabrowa.location)
+        
+        let expectedCity = CoreTests.CityModels.dabrowa
+        
+        expect(cityModel).toNot(beNil())
+        expect(cityModel).to(equal(expectedCity))
+    }
 }

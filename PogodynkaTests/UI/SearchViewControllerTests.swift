@@ -69,7 +69,7 @@ final class SearchViewControllerTests: XCTestCase {
         
         let mapView = getMapView()
         let containsTopAnchor = sut.view.constraints.contains {
-            ($0.firstAnchor === sut.topAnchor && $0.secondItem === mapView) || ($0.secondAnchor === sut.topAnchor && $0.firstItem === mapView )
+            ($0.firstAnchor === sut.topMapAnchor && $0.secondItem === mapView) || ($0.secondAnchor === sut.topMapAnchor && $0.firstItem === mapView )
         }
         
         expect(containsTopAnchor).to(beTrue())

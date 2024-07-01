@@ -103,4 +103,8 @@ class SearchViewModel {
             searchHistoryStorage.add(string: searchPhrase)
         }
     }
+    
+    func findCity(loc: Location) -> CityModel? {
+        return cities.first(where: { fabs($0.lat - loc.lat) > 1.0e-3 && fabs($0.lon - loc.lon) > 1.0e-3 })
+    }
 }
