@@ -10,11 +10,11 @@ import Foundation
 enum Destination {
     case back
     case weatherDetails(city: CityModel)
+    case search
 }
 
 protocol Coordinator {
     func start()
-    func navigate(_ destination: Destination)
     
     var children: [Coordinator] { get set }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		994CE63F2C50FF5100915C5E /* SnapshootTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CE63E2C50FF5100915C5E /* SnapshootTests.swift */; };
 		995EAF062C172E180002BA46 /* forecast_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 995EAF052C172E180002BA46 /* forecast_info.json */; };
 		995EAF442C2C1BC30002BA46 /* SearchViewController+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995EAF432C2C1BC30002BA46 /* SearchViewController+MapKit.swift */; };
 		995EAF4D2C2C1D040002BA46 /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995EAF4C2C2C1D040002BA46 /* SearchViewControllerTests.swift */; };
@@ -58,6 +59,7 @@
 		9975E26F2B9B851100FED600 /* SearchHistoryStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E26E2B9B851100FED600 /* SearchHistoryStorageTests.swift */; };
 		9975E2712B9B8C5E00FED600 /* SearchHistoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2702B9B8C5E00FED600 /* SearchHistoryStorage.swift */; };
 		9975E2732B9EF3E900FED600 /* UserDefaultsStorageMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975E2722B9EF3E900FED600 /* UserDefaultsStorageMock.swift */; };
+		9981EFCC2C6D1E78005094CE /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9981EFCB2C6D1E78005094CE /* AppNavigator.swift */; };
 		99FE71DC2BCEC78F004C638A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FE71DB2BCEC78F004C638A /* MapKit.framework */; };
 		99FE71DE2BCEC7B5004C638A /* DetailsViewController+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE71DD2BCEC7B5004C638A /* DetailsViewController+MapKit.swift */; };
 		99FE71E02BCECADA004C638A /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE71DF2BCECADA004C638A /* MapPoint.swift */; };
@@ -70,6 +72,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		994CE6402C50FF5100915C5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9975E1DB2B9739FB00FED600 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9975E1E22B9739FB00FED600;
+			remoteInfo = Pogodynka;
+		};
 		9975E1FA2B9739FF00FED600 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9975E1DB2B9739FB00FED600 /* Project object */;
@@ -87,6 +96,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		994CE63C2C50FF5100915C5E /* SnapshootTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapshootTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		994CE63E2C50FF5100915C5E /* SnapshootTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshootTests.swift; sourceTree = "<group>"; };
 		995EAF052C172E180002BA46 /* forecast_info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forecast_info.json; sourceTree = "<group>"; };
 		995EAF432C2C1BC30002BA46 /* SearchViewController+MapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+MapKit.swift"; sourceTree = "<group>"; };
 		995EAF4C2C2C1D040002BA46 /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewControllerTests.swift; path = PogodynkaTests/UI/SearchViewControllerTests.swift; sourceTree = SOURCE_ROOT; };
@@ -139,6 +150,7 @@
 		9975E26E2B9B851100FED600 /* SearchHistoryStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryStorageTests.swift; sourceTree = "<group>"; };
 		9975E2702B9B8C5E00FED600 /* SearchHistoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryStorage.swift; sourceTree = "<group>"; };
 		9975E2722B9EF3E900FED600 /* UserDefaultsStorageMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorageMock.swift; sourceTree = "<group>"; };
+		9981EFCB2C6D1E78005094CE /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
 		99FE71DB2BCEC78F004C638A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		99FE71DD2BCEC7B5004C638A /* DetailsViewController+MapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsViewController+MapKit.swift"; sourceTree = "<group>"; };
 		99FE71DF2BCECADA004C638A /* MapPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
@@ -151,6 +163,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		994CE6392C50FF5100915C5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9975E1E02B9739FB00FED600 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -178,6 +197,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		994CE63D2C50FF5100915C5E /* SnapshootTests */ = {
+			isa = PBXGroup;
+			children = (
+				994CE63E2C50FF5100915C5E /* SnapshootTests.swift */,
+			);
+			path = SnapshootTests;
+			sourceTree = "<group>";
+		};
 		995EAF4B2C2C1CF90002BA46 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +219,7 @@
 				9975E1E52B9739FB00FED600 /* Pogodynka */,
 				9975E1FC2B9739FF00FED600 /* PogodynkaTests */,
 				9975E2362B9884B600FED600 /* APIIntegrationTests */,
+				994CE63D2C50FF5100915C5E /* SnapshootTests */,
 				9975E1E42B9739FB00FED600 /* Products */,
 				9975E23E2B9884F400FED600 /* Frameworks */,
 			);
@@ -203,6 +231,7 @@
 				9975E1E32B9739FB00FED600 /* Pogodynka.app */,
 				9975E1F92B9739FF00FED600 /* PogodynkaTests.xctest */,
 				9975E2352B9884B600FED600 /* APIIntegrationTests.xctest */,
+				994CE63C2C50FF5100915C5E /* SnapshootTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -249,6 +278,7 @@
 				9975E2622B9B097A00FED600 /* extensions */,
 				9975E2162B97406A00FED600 /* Coordinator.swift */,
 				9975E2192B97417A00FED600 /* AppCoordinator.swift */,
+				9981EFCB2C6D1E78005094CE /* AppNavigator.swift */,
 				9975E2412B9891EA00FED600 /* AppMainModule.swift */,
 				9975E24D2B99F17D00FED600 /* Weather Details */,
 				9975E21B2B9770CF00FED600 /* Search */,
@@ -368,6 +398,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		994CE63B2C50FF5100915C5E /* SnapshootTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 994CE6422C50FF5100915C5E /* Build configuration list for PBXNativeTarget "SnapshootTests" */;
+			buildPhases = (
+				994CE6382C50FF5100915C5E /* Sources */,
+				994CE6392C50FF5100915C5E /* Frameworks */,
+				994CE63A2C50FF5100915C5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				994CE6412C50FF5100915C5E /* PBXTargetDependency */,
+			);
+			name = SnapshootTests;
+			productName = SnapshootTests;
+			productReference = 994CE63C2C50FF5100915C5E /* SnapshootTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		9975E1E22B9739FB00FED600 /* Pogodynka */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9975E20D2B9739FF00FED600 /* Build configuration list for PBXNativeTarget "Pogodynka" */;
@@ -437,6 +485,10 @@
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					994CE63B2C50FF5100915C5E = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 9975E1E22B9739FB00FED600;
+					};
 					9975E1E22B9739FB00FED600 = {
 						CreatedOnToolsVersion = 15.2;
 					};
@@ -470,11 +522,19 @@
 				9975E1E22B9739FB00FED600 /* Pogodynka */,
 				9975E1F82B9739FF00FED600 /* PogodynkaTests */,
 				9975E2342B9884B600FED600 /* APIIntegrationTests */,
+				994CE63B2C50FF5100915C5E /* SnapshootTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		994CE63A2C50FF5100915C5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9975E1E12B9739FB00FED600 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -504,6 +564,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		994CE6382C50FF5100915C5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				994CE63F2C50FF5100915C5E /* SnapshootTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9975E1DF2B9739FB00FED600 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -533,6 +601,7 @@
 				9975E2672B9B17C000FED600 /* NoResultLabel.swift in Sources */,
 				995EAF512C2D761D0002BA46 /* MapSearchEngine.swift in Sources */,
 				9975E26B2B9B5DE100FED600 /* IconImageDownloader.swift in Sources */,
+				9981EFCC2C6D1E78005094CE /* AppNavigator.swift in Sources */,
 				995EAF4F2C2C33990002BA46 /* CountryRegion.swift in Sources */,
 				9975E2712B9B8C5E00FED600 /* SearchHistoryStorage.swift in Sources */,
 				9975E24F2B99F1AC00FED600 /* DetailsCoordinator.swift in Sources */,
@@ -580,6 +649,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		994CE6412C50FF5100915C5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9975E1E22B9739FB00FED600 /* Pogodynka */;
+			targetProxy = 994CE6402C50FF5100915C5E /* PBXContainerItemProxy */;
+		};
 		9975E1FB2B9739FF00FED600 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9975E1E22B9739FB00FED600 /* Pogodynka */;
@@ -604,6 +678,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		994CE6432C50FF5100915C5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y4KBF2M4M7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nm2.rafi.parental-control.SnapshootTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pogodynka.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pogodynka";
+			};
+			name = Debug;
+		};
+		994CE6442C50FF5100915C5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y4KBF2M4M7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nm2.rafi.parental-control.SnapshootTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pogodynka.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pogodynka";
+			};
+			name = Release;
+		};
 		9975E20B2B9739FF00FED600 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -858,6 +970,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		994CE6422C50FF5100915C5E /* Build configuration list for PBXNativeTarget "SnapshootTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				994CE6432C50FF5100915C5E /* Debug */,
+				994CE6442C50FF5100915C5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9975E1DE2B9739FB00FED600 /* Build configuration list for PBXProject "Pogodynka" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

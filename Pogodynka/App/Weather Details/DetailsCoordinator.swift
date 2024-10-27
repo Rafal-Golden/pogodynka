@@ -11,11 +11,11 @@ class DetailsCoordinator: Coordinator {
     
     internal var children: [Coordinator] = []
     
-    private var navigationController: UINavigationController
+    private var navigator: AppNavigator
     private var cityModel: CityModel
     
-    init(navigationController: UINavigationController, cityModel: CityModel) {
-        self.navigationController = navigationController
+    init(navigator: AppNavigator, cityModel: CityModel) {
+        self.navigator = navigator
         self.cityModel = cityModel
     }
     
@@ -26,17 +26,12 @@ class DetailsCoordinator: Coordinator {
         detailsModel.iconImageDownloader = IconImageDownloader()
         detailsVC.detailsModel = detailsModel
         detailsVC.goBackBlock = { [weak self] in
-            self?.navigate(.back)
+            self?.navigateBack()
         }
-        navigationController.pushViewController(detailsVC, animated: true)
+        navigator.present(detailsVC, animated: true)
     }
     
-    func navigate(_ destination: Destination) {
-        switch destination {
-            case .back:
-                navigationController.popViewController(animated: true)
-            
-            default: break
-        }
+    func navigateBack() {
+        navigator.navigate(.back)
     }
 }

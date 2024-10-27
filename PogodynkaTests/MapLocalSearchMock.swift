@@ -9,11 +9,14 @@ import MapKit
 @testable import Pogodynka
 
 class MapLocalSearchMock: LocalSearchProtocol {
+    
     var startCalled = false
     var startResponse: MKLocalSearch.Response? = nil
     var startError: Error? = nil
     
-    func start(completionHandler: @escaping (MKLocalSearch.Response?, Error?) -> Void) {
+    @MainActor
+    @preconcurrency
+    func start(completionHandler: @escaping @MainActor @Sendable (MKLocalSearch.Response?, (any Error)?) -> Void) {
         completionHandler(startResponse, startError)
         startCalled = true
     }

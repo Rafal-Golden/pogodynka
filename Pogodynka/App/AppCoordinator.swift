@@ -11,20 +11,23 @@ class AppCoordinator: Coordinator {
     
     var children: [Coordinator] = []
     
-    private(set) var navigationController: UINavigationController
+    private var navigationController: UINavigationController
+    private(set) var navigator: AppNavigator
+    
+    var viewControllersCount: Int {
+        navigationController.viewControllers.count
+    }
     
     init(window: UIWindow) {
         self.navigationController = UINavigationController.init()
+        self.navigator = AppNavigator(navigationController: navigationController)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
     
     func start() {
-        let coordinator = SearchCoordinator(navigationController: navigationController)
+        let coordinator = SearchCoordinator(navigator: navigator)
         coordinator.start()
         children.append(coordinator)
-    }
-    
-    func navigate(_ destination: Destination) {
     }
 }

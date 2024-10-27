@@ -30,6 +30,7 @@ final class AppCoordinatorTests: XCTestCase {
 
     func test_afterInit_containsViewController() {
         sut.start()
-        expect(self.sut.navigationController.viewControllers.count).to(equal(1))
+        expect(self.sut.viewControllersCount).to(equal(1))
+        expect(self.sut.children).toNot(beEmpty())
     }
 }

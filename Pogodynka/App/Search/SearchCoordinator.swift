@@ -9,28 +9,16 @@ import UIKit
 
 class SearchCoordinator: Coordinator {
     
-    private var navigationController: UINavigationController
+    private(set) var navigator: AppNavigator
     internal var children: [Coordinator] = []
     
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController        
+    init(navigator: AppNavigator) {
+        self.navigator = navigator
     }
     
     func start() {
         let searchVC = build()
-        navigationController.pushViewController(searchVC, animated: true)
-    }
-    
-    func navigate(_ destination: Destination) {
-        switch destination {
-            case .back:
-                break
-            case .weatherDetails(let city):
-                let coordinator = DetailsCoordinator(navigationController: navigationController, cityModel: city)
-                coordinator.start()
-                children.append(coordinator)
-                break
-        }
+        navigator.present(searchVC, animated: true)
     }
     
     func build() -> UIViewController {
@@ -42,8 +30,14 @@ class SearchCoordinator: Coordinator {
         searchViewController.model = SearchViewModel(weatherRepository: repository, searchHistory: searchHistory, isPL: isPL)
         searchViewController.model.countryRegion = CountryRegion()
         searchViewController.goToWeatherDetails = { [weak self] cityModel in
-            self?.navigate(.weatherDetails(city: cityModel))
+            self?.navigate(weatherDetails: cityModel)
         }
         return searchViewController
+    }
+    
+    private func navigate(weatherDetails cityModel: CityModel) {
+        let coordinator = DetailsCoordinator(navigator: navigator, cityModel: cityModel)
+        coordinator.start()
+        children.append(coordinator)
     }
 }

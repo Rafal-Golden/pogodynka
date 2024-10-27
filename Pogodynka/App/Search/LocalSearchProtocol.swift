@@ -8,7 +8,7 @@
 import MapKit
 
 protocol LocalSearchProtocol {
-    func start(completionHandler: @escaping (MKLocalSearch.Response?, Error?) -> Void)
+    func start(completionHandler: @escaping @MainActor @Sendable (MKLocalSearch.Response?, (any Error)?) -> Void)
 }
 
 extension MKLocalSearch: LocalSearchProtocol {}
