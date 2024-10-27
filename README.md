@@ -11,10 +11,10 @@
 - **Location Search**: Search for weather in any location worldwide.
 - **User-Friendly Interface**: Clean and straightforward UI for easy navigation.
 
-## Screenshots
+## App preview
 
 ![Screenshot of Pogodynka](./AppPreview.jpg)  
-*Add a screenshot here to show the application in action.*
+*Here you can see main screen with search function*
 
 ## Installation
 
